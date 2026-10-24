@@ -5,6 +5,11 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Салон красоты «Лаванда» в Красногорске - онлайн-запись</title>
 <meta name="description" content="Стрижки, окрашивание, маникюр, макияж и уход за лицом в Красногорске. Онлайн-запись к мастеру за 1 минуту.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='16' fill='%239b6bb0'/%3E%3Ctext x='16' y='22' font-size='17' text-anchor='middle' fill='white' font-family='serif'%3EЛ%3C/text%3E%3C/svg%3E">
+<meta property="og:title" content="Салон красоты «Лаванда» в Красногорске">
+<meta property="og:description" content="Стрижки, окрашивание, маникюр, макияж, уход за лицом. Онлайн-запись за минуту.">
+<meta property="og:image" content="img/salon2.jpg">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BeautySalon","name":"Лаванда","telephone":"+7 (999) 000-00-00","address":{"@type":"PostalAddress","addressLocality":"Красногорск","streetAddress":"ул. Ленина, 35"},"openingHours":"Mo-Su 09:00-21:00","priceRange":"1200-7000 ₽"}</script>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
 :root{--bg:#fbf8f6;--ink:#2b2230;--mut:#7a6f7d;--acc:#9b6bb0;--acc2:#e9dff0;--line:#ece4ea;--gold:#c8a165}
@@ -22,7 +27,7 @@ nav a:hover{color:var(--ink)}
 .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;background:var(--acc);color:#fff;border:0;border-radius:40px;padding:14px 26px;font:600 16px Manrope,sans-serif;cursor:pointer;transition:.2s}
 .btn:hover{background:#86579b;transform:translateY(-1px)}
 .btn.line{background:transparent;color:var(--ink);border:1.5px solid var(--ink)}
-.hero{position:relative;min-height:600px;display:flex;align-items:center;color:#fff;background:url(img/salon2.jpg) center/cover}
+.hero{position:relative;min-height:600px;display:flex;align-items:center;color:#fff;background:url(img/salon2.webp) center/cover}
 .hero:before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(43,34,48,.88) 0%,rgba(43,34,48,.55) 55%,rgba(43,34,48,.15) 100%)}
 .hero .w{position:relative;width:100%}
 .hero small{display:inline-block;border:1px solid rgba(255,255,255,.4);border-radius:30px;padding:6px 16px;font-size:14px;margin-bottom:20px}
@@ -89,17 +94,41 @@ footer .w{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
 .yc{display:block;text-align:center;margin-top:14px;font-size:14px;color:var(--acc);font-weight:600}
 .done{text-align:center;padding:20px 0}
 .done b{font-size:60px;color:var(--acc);display:block}
-.float{position:fixed;left:50%;transform:translateX(-50%);bottom:14px;z-index:40;display:none;box-shadow:0 10px 30px rgba(155,107,176,.45)}
+.float{white-space:nowrap;position:fixed;left:50%;transform:translateX(-50%);bottom:14px;z-index:40;display:none;box-shadow:0 10px 30px rgba(155,107,176,.45)}
+.burger{display:none;background:none;border:0;width:40px;height:40px;cursor:pointer}
+.burger span{display:block;height:2px;background:var(--ink);margin:6px 8px}
+.mnav{display:none;position:fixed;top:70px;left:0;right:0;background:var(--bg);padding:6px 20px 18px;z-index:29;border-bottom:1px solid var(--line);box-shadow:0 20px 30px rgba(0,0,0,.08)}
+.mnav a{display:block;padding:12px 0;font-weight:600;border-bottom:1px solid var(--line)}
+.mnav.on{display:block}
+.ferr{color:#d9534f;font-size:13px;margin-top:4px;display:none}.ferr.on{display:block}
+.agr{display:flex;gap:8px;align-items:flex-start;font-size:13px;color:var(--mut);margin-top:14px}
+.agr input{width:18px!important;height:18px;flex:none;margin-top:2px}
+.note{background:var(--acc2);color:var(--ink);border-radius:12px;padding:12px;font-size:14px;margin-top:10px;display:none}
+.soc{display:flex;gap:10px}.soc a{width:38px;height:38px;border-radius:50%;background:var(--acc2);display:grid;place-items:center}
+.soc svg{width:18px;height:18px;fill:var(--acc)}
+.float.show{opacity:1;pointer-events:auto}
+.pol{position:fixed;inset:0;background:rgba(43,34,48,.6);display:none;align-items:center;justify-content:center;z-index:60;padding:16px}
+.pol.on{display:flex}
+.pol>div{background:#fff;border-radius:20px;max-width:620px;max-height:85vh;overflow:auto;padding:28px;position:relative;font-size:15px}
+.pol h3{font-family:'Cormorant Garamond',serif;font-size:30px;margin-bottom:10px}.pol p{color:var(--mut);margin-bottom:10px}
+.pol button{position:absolute;right:14px;top:10px;border:0;background:none;font-size:28px;cursor:pointer;color:var(--mut)}
+@media(max-width:900px){nav{display:none!important}.burger{display:block}.hd>.btn{display:none}
+ .float{opacity:0;pointer-events:none;transition:.3s}
+ .tabs{flex-wrap:nowrap;overflow-x:auto;justify-content:flex-start;margin-inline:-20px;padding:0 20px 6px}.tabs button{white-space:nowrap}
+ .hero .info{gap:22px}.hero{min-height:560px}
+}
 @media(max-width:900px){nav{display:none}h1{font-size:46px}.svc,.ct{grid-template-columns:1fr}.svc img{height:280px}.mg{grid-template-columns:1fr 1fr}.revs{grid-template-columns:1fr}.hd .btn{padding:10px 16px;font-size:14px}.float{display:inline-flex}h2{font-size:38px}.cta{padding:32px}}
 </style>
 </head>
-<body>
+<body id="top">
 <div class="demo">Демо-сайт для портфолио. Салон вымышленный</div>
 <header><div class="w hd">
- <a href="#" class="logo">Лаван<span>да</span></a>
+ <a href="#top" class="logo">Лаван<span>да</span></a>
  <nav><a href="#services">Услуги и цены</a><a href="#masters">Мастера</a><a href="#reviews">Отзывы</a><a href="#contacts">Контакты</a></nav>
  <button class="btn" onclick="openBook()">Записаться</button>
+ <button class="burger" aria-label="Меню" onclick="mnav.classList.toggle('on')"><span></span><span></span><span></span></button>
 </div></header>
+<nav class="mnav" id="mnav" onclick="if(event.target.tagName=='A')this.classList.remove('on')"><a href="#services">Услуги и цены</a><a href="#masters">Мастера</a><a href="#reviews">Отзывы</a><a href="#contacts">Контакты</a><a href="tel:+79990000000">+7 (999) 000-00-00</a></nav>
 
 <section class="hero"><div class="w">
  <small>Красногорск, 5 минут от МЦД</small>
@@ -112,7 +141,7 @@ footer .w{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
 <section id="services"><div class="w">
  <div class="ttl"><i>Услуги и цены</i><h2>Что мы делаем</h2></div>
  <div class="tabs" id="tabs"></div>
- <div class="svc"><img id="simg" src="img/hair.jpg" alt="Услуги салона"><div class="plist" id="plist"></div></div>
+ <div class="svc"><img id="simg" src="img/hair.webp" alt="Услуги салона"><div class="plist" id="plist"></div></div>
 </div></section>
 
 <section class="masters" id="masters"><div class="w">
@@ -142,12 +171,14 @@ footer .w{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
    <div><small>Телефон</small><b><a href="tel:+79990000000">+7 (999) 000-00-00</a></b></div>
    <div><small>Режим работы</small><b>Ежедневно 9:00-21:00</b></div>
    <div><small>Парковка</small>Бесплатная, у входа</div>
+   <div class="soc"><a href="https://t.me/+79990000000" target="_blank" rel="noopener" title="Telegram"><svg viewBox="0 0 24 24"><path d="M21.9 4.3 18.7 19.4c-.2 1-.9 1.3-1.7.8l-4.8-3.5-2.3 2.2c-.3.3-.5.5-1 .5l.3-4.9 8.9-8c.4-.3-.1-.5-.6-.2L6.5 13.2 1.8 11.7c-1-.3-1-1 .2-1.5L20.5 3c.9-.3 1.6.2 1.4 1.3z"/></svg></a><a href="https://wa.me/79990000000" target="_blank" rel="noopener" title="WhatsApp"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .2-3.3-.7-2.8-1.1-4.5-4-4.7-4.2-.1-.2-1.1-1.5-1.1-2.9s.7-2 1-2.3c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.9 2.1c.1.2.1.4 0 .5l-.3.5-.4.4c-.1.1-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.3 2.4 1.5.3.1.5.1.6-.1l.9-1.1c.2-.3.4-.2.6-.1l2 1c.3.1.5.2.5.3.1.1.1.6-.1 1.2z"/></svg></a><a href="https://vk.com/" target="_blank" rel="noopener" title="ВКонтакте"><svg viewBox="0 0 24 24"><path d="M13 18c-6 0-9.5-4.1-9.6-11h3c.1 5 2.3 7.2 4.1 7.6V7h2.8v4.3c1.7-.2 3.6-2.2 4.2-4.3h2.8a8.3 8.3 0 0 1-3.8 5.4A8.6 8.6 0 0 1 21 18h-3.1a5.4 5.4 0 0 0-4.4-3.9V18z"/></svg></a></div>
   </div>
   <div class="map"><iframe loading="lazy" src="https://yandex.ru/map-widget/v1/?text=%D0%9A%D1%80%D0%B0%D1%81%D0%BD%D0%BE%D0%B3%D0%BE%D1%80%D1%81%D0%BA%2C%20%D1%83%D0%BB.%20%D0%9B%D0%B5%D0%BD%D0%B8%D0%BD%D0%B0%2C%2035&z=16" title="Карта"></iframe></div>
  </div>
 </div></section>
 
-<footer><div class="w"><span>© Салон красоты «Лаванда»</span><a href="#" style="text-decoration:underline">Политика конфиденциальности</a></div></footer>
+<footer><div class="w"><span>© Салон красоты «Лаванда»</span><a href="#policy" onclick="pol.classList.add('on');return false" style="text-decoration:underline">Политика конфиденциальности</a></div></footer>
+<div class="pol" id="pol" onclick="if(event.target==this)this.classList.remove('on')"><div><button onclick="pol.classList.remove('on')">×</button><h3>Политика конфиденциальности</h3><p>Салон «Лаванда» использует имя и телефон из формы записи только для подтверждения визита и напоминания о нём.</p><p>Мы не передаём данные третьим лицам и не отправляем рекламные рассылки без вашего согласия.</p><p>Чтобы удалить свои данные, позвоните нам: +7 (999) 000-00-00.</p><p>Обработка ведётся в соответствии с Федеральным законом № 152-ФЗ «О персональных данных».</p></div></div>
 <button class="btn float" onclick="openBook()">Записаться онлайн</button>
 
 <div class="ov" id="ov"><div class="md" id="md"></div></div>
@@ -155,12 +186,12 @@ footer .w{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
 <script>
 // Запись: если у салона есть YClients, кнопки открывают виджет YClients; иначе форма ниже отправляет заявку в Telegram
 const S={
- 'Волосы':{img:'img/hair.jpg',items:[['Женская стрижка','с укладкой','1 800'],['Окрашивание в один тон','короткие/средние','от 3 500'],['AirTouch / шатуш','сложное окрашивание','от 7 000'],['Укладка','любая длина','от 1 500'],['Уход Olaplex','восстановление','2 500']]},
- 'Ногти':{img:'img/nails2.jpg',items:[['Маникюр с покрытием','гель-лак','2 200'],['Маникюр без покрытия','','1 200'],['Педикюр с покрытием','','2 800'],['Наращивание','','от 3 000'],['Дизайн','1 ноготь','от 100']]},
- 'Макияж':{img:'img/makeup.jpg',items:[['Дневной макияж','','2 500'],['Вечерний макияж','','3 500'],['Свадебный образ','макияж + укладка','от 7 000'],['Оформление бровей','коррекция и окрашивание','1 300']]},
- 'Лицо':{img:'img/skin.jpg',items:[['Чистка лица','комбинированная','3 200'],['Пилинг','подбор по типу кожи','от 2 800'],['Уходовая программа','массаж + маска','3 000'],['Массаж лица','40 минут','2 200']]}
+ 'Волосы':{img:'img/hair.webp',items:[['Женская стрижка','с укладкой','1 800'],['Окрашивание в один тон','короткие/средние','от 3 500'],['AirTouch / шатуш','сложное окрашивание','от 7 000'],['Укладка','любая длина','от 1 500'],['Уход Olaplex','восстановление','2 500']]},
+ 'Ногти':{img:'img/nails2.webp',items:[['Маникюр с покрытием','гель-лак','2 200'],['Маникюр без покрытия','','1 200'],['Педикюр с покрытием','','2 800'],['Наращивание','','от 3 000'],['Дизайн','1 ноготь','от 100']]},
+ 'Макияж':{img:'img/makeup.webp',items:[['Дневной макияж','','2 500'],['Вечерний макияж','','3 500'],['Свадебный образ','макияж + укладка','от 7 000'],['Оформление бровей','коррекция и окрашивание','1 300']]},
+ 'Лицо':{img:'img/skin.webp',items:[['Чистка лица','комбинированная','3 200'],['Пилинг','подбор по типу кожи','от 2 800'],['Уходовая программа','массаж + маска','3 000'],['Массаж лица','40 минут','2 200']]}
 };
-const M=[['Анна','Колорист, стилист','Стаж 9 лет','img/m3.jpg','Волосы'],['Виктория','Мастер маникюра','Стаж 6 лет','img/m1.jpg','Ногти'],['Дарья','Визажист, бровист','Стаж 5 лет','img/m4.jpg','Макияж'],['Полина','Косметолог','Стаж 7 лет','img/m2.jpg','Лицо']];
+const M=[['Анна','Колорист, стилист','Стаж 9 лет','img/m3.webp','Волосы'],['Виктория','Мастер маникюра','Стаж 6 лет','img/m1.webp','Ногти'],['Дарья','Визажист, бровист','Стаж 5 лет','img/m4.webp','Макияж'],['Полина','Косметолог','Стаж 7 лет','img/m2.webp','Лицо']];
 let cur='Волосы',bk={};
 function rS(){
  tabs.innerHTML=Object.keys(S).map(k=>`<button class="${k==cur?'on':''}" onclick="cur='${k}';rS()">${k}</button>`).join('');
@@ -169,28 +200,43 @@ function rS(){
 }
 mg.innerHTML=M.map(m=>`<div class="m"><img src="${m[3]}" alt="${m[0]}" loading="lazy"><h4>${m[0]}</h4><p>${m[1]}</p><div class="stg">${m[2]}</div><button onclick="openBook(null,'${m[0]}')">Записаться к мастеру</button></div>`).join('');
 rS();
-function days(){const r=[];const n=['вс','пн','вт','ср','чт','пт','сб'];for(let i=0;i<7;i++){const d=new Date();d.setDate(d.getDate()+i);r.push([d.toISOString().slice(0,10),(i==0?'Сегодня':i==1?'Завтра':n[d.getDay()])+', '+d.getDate()+'.'+String(d.getMonth()+1).padStart(2,'0')])}return r}
+const pad=n=>String(n).padStart(2,'0');
+function days(){const r=[];const n=['вс','пн','вт','ср','чт','пт','сб'];for(let i=0;i<7;i++){const d=new Date();d.setDate(d.getDate()+i);r.push([d.getFullYear()+'-'+pad(d.getMonth()+1)+'-'+pad(d.getDate()),(i==0?'Сегодня':i==1?'Завтра':n[d.getDay()][0].toUpperCase()+n[d.getDay()][1])+', '+d.getDate()+'.'+pad(d.getMonth()+1)])}return r}
 function openBook(svc,master){
  const all=Object.values(S).flatMap(c=>c.items.map(i=>i[0]));
- md.innerHTML=`<button class="x" onclick="ov.classList.remove('on')">×</button><h3>Онлайн-запись</h3><p style="color:var(--mut);font-size:14px">Подтвердим запись звонком или в мессенджере</p>
+ md.innerHTML=`<button class="x" onclick="closeBook()">×</button><h3>Онлайн-запись</h3><p style="color:var(--mut);font-size:14px">Подтвердим запись звонком или в мессенджере</p>
  <label>Услуга</label><select id="bs">${all.map(s=>`<option ${s==svc?'selected':''}>${s}</option>`).join('')}</select>
  <label>Мастер</label><select id="bm"><option>Любой свободный</option>${M.map(m=>`<option ${m[0]==master?'selected':''}>${m[0]} - ${m[1]}</option>`).join('')}</select>
  <label>День</label><select id="bd" onchange="rT()">${days().map(d=>`<option value="${d[0]}">${d[1]}</option>`).join('')}</select>
- <label>Время</label><div class="times" id="bt"></div>
- <label>Имя</label><input id="bn" placeholder="Как к вам обращаться">
- <label>Телефон</label><input id="bp" type="tel" placeholder="+7 (___) ___-__-__">
- <button class="btn" style="width:100%;margin-top:18px" onclick="send()">Записаться</button>
- <a class="yc" href="#" onclick="alert('Здесь откроется виджет YClients салона');return false">Или выбрать время в YClients</a>`;
- rT();ov.classList.add('on');
- bp.addEventListener('input',()=>{let d=bp.value.replace(/\D/g,'');if(d[0]=='8'||d[0]=='7')d=d.slice(1);d=d.slice(0,10);let s='+7';if(d.length)s+=' ('+d.slice(0,3);if(d.length>=3)s+=') '+d.slice(3,6);if(d.length>=6)s+='-'+d.slice(6,8);if(d.length>=8)s+='-'+d.slice(8);bp.value=s;bp.classList.remove('err')});
+ <label>Время</label><div class="times" id="bt"></div><div class="ferr" id="e_t">Выберите свободное время</div>
+ <label>Имя</label><input id="bn" placeholder="Как к вам обращаться" autocomplete="name"><div class="ferr" id="e_n">Укажите имя</div>
+ <label>Телефон</label><input id="bp" type="tel" inputmode="tel" autocomplete="tel" placeholder="+7 (___) ___-__-__"><div class="ferr" id="e_p">Введите номер полностью</div>
+ <label class="agr"><input type="checkbox" id="ba"><span>Согласна(ен) на обработку персональных данных и с <a href="#policy" onclick="pol.classList.add('on');return false" style="text-decoration:underline">политикой конфиденциальности</a></span></label><div class="ferr" id="e_a">Нужно согласие на обработку данных</div>
+ <button class="btn" id="bsend" style="width:100%;margin-top:18px" onclick="send()">Записаться</button>
+ <a class="yc" href="#" onclick="document.getElementById('ycn').style.display='block';return false">Или выбрать время в YClients</a>
+ <div class="note" id="ycn">Здесь откроется онлайн-запись YClients вашего салона: в рабочей версии вставляется код виджета из кабинета YClients, и запись сразу попадает в ваш журнал.</div>`;
+ rT();ov.classList.add('on');document.body.style.overflow='hidden';
+ let prev='';bp.addEventListener('input',e=>{let d=bp.value.replace(/\D/g,'');if(d[0]=='8'||d[0]=='7')d=d.slice(1);d=d.slice(0,10);if(e.inputType&&e.inputType.startsWith('delete')&&d===prev)d=d.slice(0,-1);prev=d;if(!d){bp.value='';return}let s='+7 ('+d.slice(0,3);if(d.length>3)s+=') '+d.slice(3,6);if(d.length>6)s+='-'+d.slice(6,8);if(d.length>8)s+='-'+d.slice(8);bp.value=s;bp.classList.remove('err');e_p.classList.remove('on')});
+ bn.addEventListener('input',()=>{bn.classList.remove('err');e_n.classList.remove('on')});
+ ba.addEventListener('change',()=>e_a.classList.toggle('on',!ba.checked));
 }
-function rT(){const t=['10:00','11:00','12:00','13:30','15:00','16:00','17:30','19:00'];const seed=bd.selectedIndex;bt.innerHTML=t.map((x,i)=>`<button ${(i*3+seed)%5==0?'disabled':''} onclick="bk.t='${x}';[...bt.children].forEach(b=>b.classList.remove('on'));this.classList.add('on')">${x}</button>`).join('');bk.t=null}
+function closeBook(){ov.classList.remove('on');document.body.style.overflow=''}
+function rT(){const t=['10:00','11:00','12:00','13:30','15:00','16:00','17:30','19:00'];const seed=bd.selectedIndex;const now=new Date();const nowM=now.getHours()*60+now.getMinutes()+60;
+ const html=t.map((x,i)=>{const [hh,mm]=x.split(':').map(Number);const past=seed==0&&hh*60+mm<nowM;const busy=(i*3+seed)%5==0;return `<button ${past||busy?'disabled':''} onclick="bk.t='${x}';[...bt.children].forEach(b=>b.classList.remove('on'));this.classList.add('on');e_t.classList.remove('on')">${x}</button>`});
+ bt.innerHTML=html.join('');bk.t=null;
+ if(![...bt.children].some(b=>!b.disabled)){bt.innerHTML='<p style="grid-column:1/-1;color:var(--mut);font-size:14px">На этот день свободного времени нет, выберите другой день</p>'}
+}
 function send(){
- let bad=false;if(!bn.value.trim()){bn.classList.add('err');bad=true}if(bp.value.replace(/\D/g,'').length!=11){bp.classList.add('err');bad=true}if(!bk.t){alert('Выберите время');bad=true}if(bad)return;
+ const t1=!bk.t,t2=!bn.value.trim(),t3=bp.value.replace(/\D/g,'').length!=11,t4=!ba.checked;
+ e_t.classList.toggle('on',t1);e_n.classList.toggle('on',t2);bn.classList.toggle('err',t2);e_p.classList.toggle('on',t3);bp.classList.toggle('err',t3);e_a.classList.toggle('on',t4);
+ if(t1||t2||t3||t4)return;
+ bsend.disabled=true;bsend.textContent='Отправляем...';
  // Рабочая версия: fetch на обработчик, который шлёт сообщение в Telegram-бот салона
- md.innerHTML=`<button class="x" onclick="ov.classList.remove('on')">×</button><div class="done"><b>✓</b><h3>Вы записаны!</h3><p>${bs.value}, ${bd.options[bd.selectedIndex].text}, ${bk.t}</p><p style="color:var(--mut);font-size:14px;margin-top:10px">В демо-версии заявка никуда не отправляется. В рабочей она сразу приходит администратору в Telegram</p></div>`;
+ setTimeout(()=>{md.innerHTML=`<button class="x" onclick="closeBook()">×</button><div class="done"><b>✓</b><h3>Вы записаны!</h3><p>${bs.value}, ${bd.options[bd.selectedIndex].text}, ${bk.t}</p><p style="color:var(--mut);font-size:14px;margin-top:10px">Это демо, поэтому заявка никуда не ушла. В рабочей версии она сразу приходит администратору в Telegram</p><button class="btn" style="margin-top:18px" onclick="closeBook()">Хорошо</button></div>`},600);
 }
-ov.addEventListener('click',e=>{if(e.target==ov)ov.classList.remove('on')});
+document.addEventListener('keydown',e=>{if(e.key=='Escape'){closeBook();pol.classList.remove('on');mnav.classList.remove('on')}});
+const fl=document.querySelector('.float');addEventListener('scroll',()=>fl.classList.toggle('show',scrollY>innerHeight*0.7));
+ov.addEventListener('click',e=>{if(e.target==ov)closeBook()});
 </script>
 </body>
 </html>
