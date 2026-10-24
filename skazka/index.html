@@ -37,20 +37,21 @@ nav a{opacity:.88;transition:.2s}nav a:hover{opacity:1;color:var(--gold2)}
 .burger span{display:block;width:24px;height:1.5px;background:currentColor;margin:6px auto}
 /* hero */
 .hero{position:relative;height:100vh;height:100svh;min-height:640px;overflow:hidden;color:#fff;background:var(--plum)}
-.hero-bg{position:absolute;inset:-6% 0 0;will-change:transform}
-.hero-bg img{width:100%;height:112%;object-fit:cover;object-position:50% 32%;transform:scale(1.12);transition:transform 3.2s cubic-bezier(.2,.7,.2,1);filter:saturate(1.1)}
+.hero-bg{position:absolute;inset:0;will-change:transform}
+.hero-bg img{width:100%;height:100%;object-fit:cover;object-position:50% 50%;transform:scale(1.07);transition:transform 3.2s cubic-bezier(.2,.7,.2,1);filter:saturate(1.1)}
 .open .hero-bg img{transform:scale(1)}
-.hero:after{content:"";position:absolute;inset:0;z-index:1;background:radial-gradient(ellipse at 50% 40%,rgba(36,17,47,.0) 0%,rgba(36,17,47,.35) 60%,rgba(36,17,47,.85) 100%),linear-gradient(180deg,rgba(36,17,47,.65) 0%,rgba(80,30,90,.25) 35%,rgba(36,17,47,.2) 60%,rgba(36,17,47,.95) 100%)}
+.hero:after{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(180deg,rgba(28,12,40,.55) 0%,rgba(28,12,40,.15) 30%,rgba(28,12,40,0) 55%,rgba(28,12,40,.25) 85%,rgba(36,17,47,.9) 100%)}
 .fog{position:absolute;z-index:2;left:0;right:0;bottom:0;height:45%;background:radial-gradient(ellipse 70% 60% at 30% 100%,rgba(230,205,240,.28),transparent 70%),radial-gradient(ellipse 60% 50% at 80% 100%,rgba(255,215,230,.22),transparent 70%);animation:fogm 14s ease-in-out infinite alternate}
 @keyframes fogm{to{transform:translateX(3%) scale(1.04)}}
 .veil{position:absolute;inset:0;z-index:8;pointer-events:none;overflow:hidden;background:radial-gradient(ellipse at 50% 45%,#fbf3fa 0%,#ecdcf0 45%,#cdb6dc 100%);transition:opacity 1.6s .5s ease}
 .veil i{position:absolute;border-radius:50%;background:radial-gradient(circle at 50% 50%,var(--c) 0%,var(--c2) 38%,transparent 68%);transform:translate(-50%,-50%);transition:transform var(--d) cubic-bezier(.55,0,.2,1) var(--dl),opacity var(--d) ease var(--dl);will-change:transform,opacity}
 .open .veil{opacity:0}
 .open .veil i{opacity:0;transform:translate(calc(-50% + var(--x)),calc(-50% + var(--y))) scale(1.5)}
-.hero-txt{position:absolute;z-index:5;left:0;right:0;top:14%;text-align:center;padding:0 20px;opacity:0;transform:translateY(24px);transition:1.2s 1.2s}
+.hero-txt{position:absolute;z-index:5;left:50%;width:min(1100px,100%);margin-left:max(-550px,-50%);top:12%;text-align:center;padding:0 20px;opacity:0;transform:translateY(24px);transition:1.2s 1.2s}
 .open .hero-txt{opacity:1;transform:none}
+.hero-txt:before{content:"";position:absolute;inset:-10% -5%;z-index:-1;background:radial-gradient(ellipse at center,rgba(28,10,40,.55),transparent 68%)}
 .pre{font-size:12px;letter-spacing:.38em;text-transform:uppercase;font-weight:700;color:var(--gold2)}
-.hero h1{font-family:"Marck Script",cursive;font-weight:400;font-size:clamp(48px,7vw,100px);line-height:1;margin:14px 0 18px;text-shadow:0 6px 40px rgba(20,5,30,.7)}
+.hero h1{font-family:"Marck Script",cursive;font-weight:400;font-size:clamp(46px,6.4vw,92px);line-height:1;margin:14px 0 18px;text-shadow:0 6px 40px rgba(20,5,30,.7)}
 .hero h1 span{display:block;background:linear-gradient(180deg,#fff3cf,#d8b26a);-webkit-background-clip:text;background-clip:text;color:transparent}
 .hero p{font-size:18px;max-width:500px;margin:0 auto 28px;color:#eee3f0}
 .hero-cta{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
@@ -58,7 +59,7 @@ nav a{opacity:.88;transition:.2s}nav a:hover{opacity:1;color:var(--gold2)}
 .arch img{width:100%;height:100%;object-fit:cover}
 .arch .lbl{position:absolute;left:0;right:0;bottom:0;padding:30px 10px 12px;text-align:center;font-family:"Marck Script",cursive;font-size:20px;color:#fff;background:linear-gradient(transparent,rgba(20,8,25,.85))}
 .a-fox{left:6%;bottom:9%;width:min(15vw,200px);aspect-ratio:3/4.2;transform:translateY(40px) rotate(-4deg);transition-delay:1.7s}
-.a-choc{right:6%;bottom:12%;width:min(16vw,220px);aspect-ratio:3/4.2;transform:translateY(40px) rotate(4deg);transition-delay:1.9s}
+.a-choc{right:4%;bottom:7%;width:min(12vw,180px);aspect-ratio:3/4.2;transform:translateY(40px) rotate(4deg);transition-delay:1.9s}
 .open .a-fox{opacity:1;transform:rotate(-4deg)}.open .a-choc{opacity:1;transform:rotate(4deg)}
 .sparks i{position:absolute;z-index:3;width:4px;height:4px;border-radius:50%;background:#fff3cf;box-shadow:0 0 10px 2px rgba(255,230,160,.8);animation:sp 6s infinite ease-in-out;opacity:0}
 @keyframes sp{0%{opacity:0;transform:translateY(0)}40%{opacity:1}100%{opacity:0;transform:translateY(-60px)}}
@@ -162,7 +163,8 @@ footer h2{color:#fff}
  .wrap{padding:0 18px}
  .hero-txt{top:12%}
  .hero p{font-size:16px}
- .a-fox{width:31vw;left:5%;bottom:7%}.a-choc{width:33vw;right:5%;bottom:9%}
+ .a-choc{width:30vw;right:5%;bottom:6%}
+ .hero-txt{top:10%}
  .arch .lbl{font-size:15px;padding:24px 6px 8px}
  .scroll-hint{display:none}
  .grid4{gap:14px}
@@ -203,7 +205,7 @@ footer h2{color:#fff}
 </div></header>
 
 <section class="hero" id="top" style="padding:0">
- <div class="hero-bg" id="hbg"><img src="https://images.unsplash.com/photo-1534313314376-a72289b6181e?w=2000&q=75&auto=format&fit=crop" alt="Сказочный замок на холме" fetchpriority="high"></div>
+ <div class="hero-bg" id="hbg"><picture><source media="(max-width:700px)" srcset="hero-m.webp"><img src="hero-d.webp" alt="Девочка и лиса смотрят на сказочный замок, к которому ведёт золотая дорога" fetchpriority="high"></picture></div>
  <div class="fog"></div>
  <div class="sparks" id="sparks"></div>
  <div class="hero-txt">
@@ -212,7 +214,6 @@ footer h2{color:#fff}
   <p>Шоколад, с которого начинается сказка. Четыре вкуса, четыре истории.</p>
   <div class="hero-cta"><a class="btn" href="#collection">Открыть коллекцию</a><a class="btn ghost" href="#buy">Где купить</a></div>
  </div>
- <div class="arch a-fox"><img src="https://images.unsplash.com/photo-1500479694472-551d1fb6258d?w=600&q=70&auto=format&fit=crop" alt="Лиса в траве"><div class="lbl">Лиса знает дорогу</div></div>
  <div class="arch a-choc"><img src="https://images.unsplash.com/photo-1623660053975-cf75a8be0908?w=600&q=70&auto=format&fit=crop" alt="Плитка молочного шоколада"><div class="lbl">Вкус из сказки</div></div>
  <div class="veil" id="veil"></div>
  <div class="scroll-hint">Листайте</div>
@@ -229,8 +230,8 @@ footer h2{color:#fff}
   <p>Поэтому наш шоколад начинается не с рецепта, а с истории. Девочка и лиса отправляются в путь, а на каждой плитке ждёт новая глава.</p>
   <div class="quote">«Лучшие сказки рассказывают не словами, а вкусом»</div></div>
  <div class="duo reveal">
-  <div class="arch a1"><img loading="lazy" src="https://images.unsplash.com/photo-1557008075-7f2c5efa4cfd?w=900&q=70&auto=format&fit=crop" alt="Лиса сидит на тропинке"></div>
-  <div class="arch a2"><img loading="lazy" src="https://images.unsplash.com/photo-1533154683836-84ea7a0bc310?w=700&q=70&auto=format&fit=crop" alt="Старинный замок и дорога к нему"></div>
+  <div class="arch a1"><img loading="lazy" src="st-castle.webp" alt="Сказочный замок и золотая дорога"></div>
+  <div class="arch a2"><img loading="lazy" src="st-girl.webp" alt="Девочка в красном плаще и лиса"></div>
   <svg class="star ico" style="stroke-width:1"><use href="#i-star"/></svg>
  </div>
 </div></section>
@@ -272,10 +273,10 @@ footer h2{color:#fff}
 <footer id="contacts"><div class="wrap">
  <span class="kick">Контакты</span><h2>Напишите нам</h2>
  <div class="soc"><a href="https://t.me/" target="_blank" rel="noopener"><svg class="ico"><use href="#i-tg"/></svg>Telegram</a><a href="https://vk.com/" target="_blank" rel="noopener"><svg class="ico"><use href="#i-vk"/></svg>ВКонтакте</a><a href="mailto:hello@example.ru"><svg class="ico"><use href="#i-mail"/></svg>hello@example.ru</a><a href="tel:+79990000000"><svg class="ico"><use href="#i-phone"/></svg>+7 999 000-00-00</a></div>
- <p class="fine">Демо-концепт сайта. Фото: Unsplash, в работе будут ваши фото продукта и иллюстрации в стилистике упаковки.</p>
+ <p class="fine">Демо-концепт сайта. Иллюстрации созданы для примера, фото шоколада: Unsplash. В работе будут ваши фото продукта и герои с упаковки.</p>
 </div></footer>
 
-<div class="guide" id="guide"><div class="av"><img src="https://images.unsplash.com/photo-1516934024742-b461fba47600?w=200&q=70&auto=format&fit=crop" alt=""></div><div class="bubble" id="bubble">Пойдём смотреть вкусы?</div></div>
+<div class="guide" id="guide"><div class="av"><img src="fox-av.webp" alt=""></div><div class="bubble" id="bubble">Пойдём смотреть вкусы?</div></div>
 
 <script>
 const ICO={milk:'#i-crown',dark:'#i-leaf',white:'#i-star',orange:'#i-gift'};
@@ -288,7 +289,7 @@ const sp=document.getElementById('sparks');for(let i=0;i<26;i++){const s=documen
 const hero=document.getElementById('top');const go=()=>hero.classList.add('open');document.querySelector('#hbg img').complete?setTimeout(go,200):(document.querySelector('#hbg img').onload=()=>setTimeout(go,150),setTimeout(go,1500));
 const hbg=document.getElementById('hbg'),hd=document.getElementById('hd'),nav=document.getElementById('nav'),guide=document.getElementById('guide'),bub=document.getElementById('bubble'),hint=document.querySelector('.scroll-hint');let bt;
 const tips={collection:'Угадаешь мой любимый вкус?',story:'Это наша с девочкой история',quality:'Никакой химии, честно-честно',buy:'Здесь можно купить сказку',partners:'Давайте дружить!',contacts:'Пиши, мы ответим'};
-function onScroll(){const y=scrollY;if(y<innerHeight*1.2)hbg.style.transform=`translateY(${y*.3}px)`;hd.classList.toggle('solid',y>60||nav.classList.contains('open'));guide.classList.toggle('on',y>innerHeight*.7);hint.style.opacity=y>30?0:1;
+function onScroll(){const y=scrollY;if(y<innerHeight*1.2)hbg.style.transform=`translateY(${y*.25}px)`;hd.classList.toggle('solid',y>60||nav.classList.contains('open'));guide.classList.toggle('on',y>innerHeight*.7);hint.style.opacity=y>30?0:1;
  let cur='collection';for(const id in tips){const el=document.getElementById(id);if(el.getBoundingClientRect().top<innerHeight*.55)cur=id}if(bub.dataset.c!==cur){bub.dataset.c=cur;bub.textContent=tips[cur];bub.style.opacity=1;clearTimeout(bt);bt=setTimeout(()=>bub.style.opacity=0,3500)}}
 addEventListener('scroll',onScroll,{passive:true});onScroll();
 document.getElementById('burger').onclick=()=>{nav.classList.toggle('open');onScroll()};nav.querySelectorAll('a').forEach(a=>a.onclick=()=>{nav.classList.remove('open');onScroll()});
