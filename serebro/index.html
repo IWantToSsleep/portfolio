@@ -39,7 +39,7 @@ nav a:hover:after{width:100%}
 .hphone{color:#fff;font-weight:500;font-size:15px}
 .burger{display:none;background:none;border:0;width:44px;height:44px;cursor:pointer;color:#fff}
 header.solid .burger{color:var(--ink)}
-.burger span{display:block;width:24px;height:1.5px;background:currentColor;margin:6px auto;transition:.3s}
+.burger span{display:block;width:24px;height:1.5px;background:currentColor;margin:6px auto;transition:.3s}.burger.x span:nth-child(1){transform:translateY(7.5px) rotate(45deg)}.burger.x span:nth-child(2){opacity:0}.burger.x span:nth-child(3){transform:translateY(-7.5px) rotate(-45deg)}
 /* hero */
 .hero{position:relative;min-height:100vh;min-height:100svh;display:flex;align-items:flex-end;color:#fff;padding:140px 0 70px;background:#2a2826}
 .hero img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
@@ -135,7 +135,7 @@ footer{padding:40px 0;border-top:1px solid var(--line);font-size:13px;color:var(
 @media(max-width:1000px){
  nav,.hphone{display:none}
  .burger{display:block}
- nav.open{display:flex;position:fixed;top:78px;left:0;right:0;bottom:0;background:var(--bg);flex-direction:column;padding:40px 24px;gap:26px}
+ nav.open{display:flex;position:fixed;top:78px;left:0;right:0;height:calc(100vh - 78px);height:calc(100dvh - 78px);overflow-y:auto;background:var(--bg);z-index:60;flex-direction:column;padding:40px 24px;gap:26px}
  nav.open a{color:var(--ink);font:500 32px "Cormorant Garamond",serif}
  .svc{grid-template-columns:1fr}
  .svc article,.svc article+article{padding:36px 0;border-left:0}
@@ -266,7 +266,7 @@ footer{padding:40px 0;border-top:1px solid var(--line);font-size:13px;color:var(
 <script>
 const hd=document.getElementById('hd'),nav=document.getElementById('nav'),bg=document.getElementById('burger');
 const onS=()=>hd.classList.toggle('solid',scrollY>40||nav.classList.contains('open'));addEventListener('scroll',onS);onS();
-bg.onclick=()=>{nav.classList.toggle('open');onS()};nav.querySelectorAll('a').forEach(a=>a.onclick=()=>{nav.classList.remove('open');onS()});
+bg.onclick=()=>{const o=nav.classList.toggle('open');document.body.style.overflow=o?'hidden':'';bg.classList.toggle('x',o);onS()};nav.querySelectorAll('a').forEach(a=>a.onclick=()=>{nav.classList.remove('open');bg.classList.remove('x');document.body.style.overflow='';onS()});
 document.querySelectorAll('#filters button').forEach(b=>b.onclick=()=>{document.querySelectorAll('#filters button').forEach(x=>x.classList.remove('on'));b.classList.add('on');document.querySelectorAll('.card').forEach(c=>c.classList.toggle('hide',b.dataset.f!=='all'&&c.dataset.c!==b.dataset.f))});
 const io=new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting){x.target.classList.add('in');io.unobserve(x.target)}}),{threshold:0,rootMargin:"0px 0px -40px 0px"});document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
 const lb=document.getElementById('lb'),lbi=document.getElementById('lbi'),lbt=document.getElementById('lbt');let cur=0;
