@@ -5,6 +5,11 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>ЭлТех - ремонт бытовой техники и электроинструмента в Казани</title>
 <meta name="description" content="Ремонт микроволновок, пылесосов, кофемашин, чайников и электроинструмента в Казани. Диагностика 500 ₽, гарантия 3 месяца.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%23ff7a1a'/%3E%3Cpath d='M18 4 8 18h7l-2 10 10-14h-7z' fill='white'/%3E%3C/svg%3E">
+<meta property="og:title" content="ЭлТех - ремонт техники в Казани">
+<meta property="og:description" content="Ремонт бытовой техники и электроинструмента. Диагностика 500 ₽, гарантия 3 месяца.">
+<meta property="og:image" content="img/hero.jpg">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"ElectronicsStore","name":"ЭлТех","description":"Ремонт малой бытовой техники и электроинструмента","telephone":"+7 (843) 000-00-00","address":{"@type":"PostalAddress","addressLocality":"Казань","streetAddress":"ул. Попова, д. 21"},"openingHours":["Mo-Fr 10:00-19:00","Sa 10:00-16:00"],"priceRange":"500-3000 ₽"}</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
@@ -106,6 +111,38 @@ footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
 .fab{position:fixed;right:18px;bottom:18px;display:flex;flex-direction:column;gap:10px;z-index:30}
 .fab a{width:52px;height:52px;border-radius:50%;display:grid;place-items:center;color:#fff;box-shadow:0 8px 20px rgba(0,0,0,.2);font-size:22px}
 .fab svg{width:24px;height:24px;fill:#fff}
+.logo i svg{width:22px;height:22px}
+.hero .g{grid-template-columns:1.05fr .95fr}
+.hpic{position:relative}
+.hpic picture img{width:100%;height:470px;object-fit:cover;border-radius:24px;display:block}
+.hpic .hcard{position:absolute;left:-40px;bottom:-30px;width:300px;padding:20px}
+.hrow .ic svg{width:18px;height:18px}
+.burger{display:none;background:none;border:0;width:40px;height:40px;cursor:pointer}
+.burger span{display:block;height:2px;background:var(--ink);margin:6px 8px;border-radius:2px}
+.mnav{display:none;position:fixed;top:68px;left:0;right:0;background:#fff;border-bottom:1px solid var(--line);padding:10px 20px 20px;z-index:19;box-shadow:0 20px 30px rgba(0,0,0,.08)}
+.mnav a{display:block;padding:12px 0;font-weight:600;border-bottom:1px solid var(--line)}
+.mnav.on{display:block}
+.ferr{color:#e5484d;font-size:13px;margin-top:4px;display:none}
+.ferr.on{display:block}
+.pol{position:fixed;inset:0;background:rgba(20,32,46,.6);display:none;align-items:center;justify-content:center;z-index:60;padding:16px}
+.pol.on{display:flex}
+.pol div{background:#fff;border-radius:18px;max-width:640px;max-height:85vh;overflow:auto;padding:28px;position:relative;font-size:15px}
+.pol h3{font-size:22px;margin-bottom:12px}.pol p{margin-bottom:10px;color:var(--mut)}
+.pol button{position:absolute;right:14px;top:10px;border:0;background:none;font-size:28px;cursor:pointer;color:var(--mut)}
+.mbar{display:none}
+@media(max-width:900px){
+ .hpic picture img{height:280px}.hpic .hcard{position:relative;z-index:2;width:auto;left:auto;bottom:auto;margin:-50px 14px 0}
+ .hero .facts{gap:18px}.hero .facts b{font-size:21px}
+ .burger{display:block}.hd .tel{display:none}
+ .fab{display:none}
+ .mbar{display:grid;grid-template-columns:1.3fr 1fr 1fr;position:fixed;left:0;right:0;bottom:0;z-index:30;background:#fff;border-top:1px solid var(--line);padding:8px;gap:8px;box-shadow:0 -6px 20px rgba(0,0,0,.06)}
+ .mbar a{display:flex;align-items:center;justify-content:center;gap:6px;border-radius:10px;padding:11px 4px;font-weight:700;font-size:14px;color:#fff}
+ .mbar svg{width:18px;height:18px;fill:#fff}
+ body{padding-bottom:64px}
+ .cats .cat:last-child:nth-child(odd){grid-column:1/-1}
+ .ptabs{flex-wrap:nowrap;overflow-x:auto;padding-bottom:6px;margin-inline:-20px;padding-inline:20px}
+ .ptabs button{white-space:nowrap}
+}
 @media(max-width:900px){
  nav{display:none}.hero .g,.formsec .g,.contacts .g{grid-template-columns:1fr}
  h1{font-size:34px}.cats{grid-template-columns:repeat(2,1fr)}.adv,.revs{grid-template-columns:1fr 1fr}.steps{grid-template-columns:1fr 1fr}
@@ -114,14 +151,16 @@ footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
 @media(max-width:560px){.adv,.revs,.steps{grid-template-columns:1fr}h2{font-size:28px}.tel{font-size:14px}table{font-size:15px}}
 </style>
 </head>
-<body>
+<body id="top">
 <div class="demo">Демо-сайт для портфолио. Данные примерные, взяты из ТЗ</div>
 <header><div class="wrap hd">
- <a class="logo" href="#"><i>⚡</i>ЭлТех</a>
+ <a class="logo" href="#top"><i><svg viewBox="0 0 24 24"><path d="M13 2 4 14h6l-1 8 9-12h-6z" fill="#fff"/></svg></i>ЭлТех</a>
  <nav><a href="#what">Что чиним</a><a href="#price">Цены</a><a href="#how">Как работаем</a><a href="#reviews">Отзывы</a><a href="#contacts">Контакты</a></nav>
  <a class="tel" href="tel:+78430000000">+7 (843) 000-00-00</a>
  <a class="btn" href="#form">Оставить заявку</a>
+ <button class="burger" aria-label="Меню" onclick="mnav.classList.toggle('on')"><span></span><span></span><span></span></button>
 </div></header>
+<nav class="mnav" id="mnav" onclick="if(event.target.tagName=='A')this.classList.remove('on')"><a href="#what">Что чиним</a><a href="#price">Цены</a><a href="#how">Как работаем</a><a href="#reviews">Отзывы</a><a href="#contacts">Контакты</a><a href="tel:+78430000000">📞 +7 (843) 000-00-00</a></nav>
 
 <section class="hero"><div class="wrap g">
  <div>
@@ -131,12 +170,14 @@ footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
   <div class="acts"><a class="btn" href="#form">Оставить заявку</a><a class="btn ghost" href="#price">Смотреть цены</a></div>
   <div class="facts"><div><b>3 месяца</b><small>гарантия на работы</small></div><div><b>1-3 дня</b><small>простой ремонт</small></div><div><b>500 ₽</b><small>диагностика</small></div></div>
  </div>
+ <div class="hpic"><picture><source srcset="img/hero.webp" type="image/webp"><img src="img/hero.jpg" alt="Мастер ремонтирует плату бытовой техники" width="1100" height="733"></picture>
  <div class="hcard">
-  <h3>Сервис рядом с вами</h3>
-  <div class="hrow"><span class="ic">🕙</span><div><b>Пн-Пт 10:00-19:00</b><small>Сб 10:00-16:00, вс выходной</small></div></div>
-  <div class="hrow"><span class="ic">🏠</span><div><b>Цокольный этаж</b><small>Вход со двора, вывеска «ЭлТех»</small></div></div>
-  <div class="hrow"><span class="ic">🔧</span><div><b>Приём без записи</b><small>В часы работы, без перерыва</small></div></div>
-  <div class="hrow"><span class="ic">📞</span><div><b><a href="tel:+78430000000">+7 (843) 000-00-00</a></b><small>Звонок, WhatsApp, Telegram</small></div></div>
+  
+  <div class="hrow"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="#ff7a1a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span><div><b>Пн-Пт 10:00-19:00</b><small>Сб 10:00-16:00, вс выходной</small></div></div>
+  <div class="hrow"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="#ff7a1a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg></span><div><b>Цокольный этаж</b><small>Вход со двора, вывеска «ЭлТех»</small></div></div>
+  <div class="hrow"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="#ff7a1a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a4 4 0 0 0-5.4 5.4L3 18l3 3 6.3-6.3a4 4 0 0 0 5.4-5.4l-2.5 2.5-2.4-.6-.6-2.4z"/></svg></span><div><b>Приём без записи</b><small>В часы работы, без перерыва</small></div></div>
+  <div class="hrow"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="#ff7a1a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6.6 10.8a15 15 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1z"/></svg></span><div><b><a href="tel:+78430000000">+7 (843) 000-00-00</a></b><small>Звонок, WhatsApp, Telegram</small></div></div>
+ </div>
  </div>
 </div></section>
 
@@ -147,7 +188,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
 
 <section class="price" id="price"><div class="wrap">
  <h2>Прайс-лист</h2><p class="sub">Цены на работы. Запчасти оплачиваются отдельно, точная сумма после диагностики</p>
- <div class="diag">🔍 Диагностика любой техники: 500 ₽. При согласии на ремонт входит в стоимость работ</div>
+ <div class="diag">Диагностика любой техники: 500 ₽. При согласии на ремонт входит в стоимость работ</div>
  <div class="ptabs" id="ptabs"></div>
  <table><thead><tr><th>Услуга</th><th>Цена</th></tr></thead><tbody id="ptable"></tbody></table>
  <div class="pnote"><span class="src"><i id="srcdot"></i><span id="srctext">Цены загружаются из Google Таблицы</span></span><span>Не нашли свою поломку? <a href="#form" style="color:var(--acc2);font-weight:700">Уточнить цену</a></span></div>
@@ -159,7 +200,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
   <div><b>3 мес.</b><h4>Гарантия на работы</h4><p>Если поломка повторится, исправим бесплатно</p></div>
   <div><b>1-3 дня</b><h4>Быстрые сроки</h4><p>Запчасти под заказ, до 7 дней</p></div>
   <div><b>100%</b><h4>Оригинальные запчасти</h4><p>Или проверенные аналоги, по согласованию с вами</p></div>
-  <div><b>0 ₽</b><h4>Диагностика в подарок</h4><p>Её стоимость входит в цену ремонта</p></div>
+  <div><b>500 ₽</b><h4>Диагностика в счёт ремонта</h4><p>Если ремонтируете у нас, она входит в стоимость работ</p></div>
  </div>
 </div></section>
 
@@ -175,7 +216,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
 </div></section>
 
 <section id="reviews" style="padding-top:0"><div class="wrap">
- <h2>Отзывы клиентов</h2><p class="sub">Примеры отзывов для макета</p>
+ <h2>Отзывы клиентов</h2><p class="sub">Что говорят люди, которые уже чинили у нас технику</p>
  <div class="revs">
   <div class="rev"><div class="st">★★★★★</div><p>Микроволновка перестала греть. Поменяли магнетрон за день, цену назвали сразу после диагностики.</p><b>Ирина</b><small>Ремонт микроволновки</small></div>
   <div class="rev"><div class="st">★★★★★</div><p>Шуруповёрт искрил, заменили щётки и кнопку. Работает как новый, вышло недорого.</p><b>Алексей</b><small>Ремонт электроинструмента</small></div>
@@ -190,14 +231,15 @@ footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
   <ul><li>Заявка сразу попадает в нашу таблицу</li><li>Администратор получает уведомление в Telegram</li><li>Ваши данные никому не передаются</li></ul>
  </div>
  <form id="f" novalidate>
-  <div><label>Имя</label><input name="name" required placeholder="Как к вам обращаться"></div>
-  <div><label>Телефон</label><input name="phone" id="phone" type="tel" required placeholder="+7 (___) ___-__-__"></div>
+  <div><label>Имя</label><input name="name" required placeholder="Как к вам обращаться" autocomplete="name"><div class="ferr" id="e_name">Укажите имя</div></div>
+  <div><label>Телефон</label><input name="phone" id="phone" type="tel" required placeholder="+7 (___) ___-__-__" autocomplete="tel" inputmode="tel"><div class="ferr" id="e_phone">Введите номер полностью</div></div>
   <div><label>Тип техники</label><select name="type" id="ftype"></select></div>
   <div><label>Марка и модель</label><input name="model" placeholder="Например, Bosch GSR 120"></div>
   <div class="full"><label>Что случилось</label><textarea name="issue" placeholder="Опишите неисправность"></textarea></div>
   <input class="hp" name="website" tabindex="-1" autocomplete="off">
-  <div class="full agree"><input type="checkbox" id="agree" required><span>Согласен на обработку персональных данных и с <a href="#" style="text-decoration:underline">политикой конфиденциальности</a></span></div>
-  <div class="full"><button class="btn" style="width:100%">Отправить заявку</button></div>
+  <div class="full agree"><input type="checkbox" id="agree" required><span>Согласен на обработку персональных данных и с <a href="#policy" onclick="pol.classList.add('on');return false" style="text-decoration:underline">политикой конфиденциальности</a></span></div>
+  <div class="full ferr" id="e_agree">Нужно согласие на обработку данных</div>
+  <div class="full"><button class="btn" id="sbtn" style="width:100%">Отправить заявку</button></div>
   <div class="ok" id="ok">Спасибо! Заявка принята, скоро перезвоним. (В демо-версии данные никуда не отправляются)</div>
  </form>
 </div></section>
@@ -215,14 +257,16 @@ footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
  </div>
 </div></section>
 
-<footer><div class="wrap"><span>© ЭлТех, сервис ремонта техники. ИП Иванов И.И., ИНН 000000000000</span><a href="#" style="text-decoration:underline">Политика конфиденциальности</a></div></footer>
+<footer><div class="wrap"><span>© ЭлТех, сервис ремонта техники. ИП Иванов И.И., ИНН 000000000000</span><a href="#policy" onclick="pol.classList.add('on');return false" style="text-decoration:underline">Политика конфиденциальности</a></div></footer>
+<div class="pol" id="pol" onclick="if(event.target==this)this.classList.remove('on')"><div><button onclick="pol.classList.remove('on')">×</button><h3>Политика конфиденциальности</h3><p>Сервис «ЭлТех» обрабатывает имя, телефон и описание техники, которые вы оставляете в форме заявки, только чтобы связаться с вами и выполнить ремонт.</p><p>Данные хранятся в защищённой таблице, доступ к ней есть только у администратора сервиса. Мы не передаём их третьим лицам и не используем для рассылок.</p><p>Вы можете в любой момент попросить удалить ваши данные, позвонив по номеру +7 (843) 000-00-00.</p><p>Обработка ведётся в соответствии с Федеральным законом № 152-ФЗ «О персональных данных».</p></div></div>
 
 <div class="fab">
- <a href="tel:+78430000000" style="background:#ff7a1a" title="Позвонить">📞</a>
- <a href="#" style="background:#25d366" title="WhatsApp"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .2-3.3-.7-2.8-1.1-4.5-4-4.7-4.2-.1-.2-1.1-1.5-1.1-2.9s.7-2 1-2.3c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.9 2.1c.1.2.1.4 0 .5l-.3.5-.4.4c-.1.1-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.3 2.4 1.5.3.1.5.1.6-.1l.9-1.1c.2-.3.4-.2.6-.1l2 1c.3.1.5.2.5.3.1.1.1.6-.1 1.2z"/></svg></a>
- <a href="#" style="background:#229ed9" title="Telegram"><svg viewBox="0 0 24 24"><path d="M21.9 4.3 18.7 19.4c-.2 1-.9 1.3-1.7.8l-4.8-3.5-2.3 2.2c-.3.3-.5.5-1 .5l.3-4.9 8.9-8c.4-.3-.1-.5-.6-.2L6.5 13.2 1.8 11.7c-1-.3-1-1 .2-1.5L20.5 3c.9-.3 1.6.2 1.4 1.3z"/></svg></a>
+ <a href="tel:+78430000000" style="background:#ff7a1a" title="Позвонить"><svg viewBox="0 0 24 24"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1l-2.3 2.2z"/></svg></a>
+ <a href="https://wa.me/78430000000" target="_blank" rel="noopener" style="background:#25d366" title="WhatsApp"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .2-3.3-.7-2.8-1.1-4.5-4-4.7-4.2-.1-.2-1.1-1.5-1.1-2.9s.7-2 1-2.3c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.9 2.1c.1.2.1.4 0 .5l-.3.5-.4.4c-.1.1-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.3 2.4 1.5.3.1.5.1.6-.1l.9-1.1c.2-.3.4-.2.6-.1l2 1c.3.1.5.2.5.3.1.1.1.6-.1 1.2z"/></svg></a>
+ <a href="https://t.me/+78430000000" target="_blank" rel="noopener" style="background:#229ed9" title="Telegram"><svg viewBox="0 0 24 24"><path d="M21.9 4.3 18.7 19.4c-.2 1-.9 1.3-1.7.8l-4.8-3.5-2.3 2.2c-.3.3-.5.5-1 .5l.3-4.9 8.9-8c.4-.3-.1-.5-.6-.2L6.5 13.2 1.8 11.7c-1-.3-1-1 .2-1.5L20.5 3c.9-.3 1.6.2 1.4 1.3z"/></svg></a>
 </div>
 
+<div class="mbar"><a href="tel:+78430000000" style="background:#ff7a1a"><svg viewBox="0 0 24 24"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1l-2.3 2.2z"/></svg>Позвонить</a><a href="https://wa.me/78430000000" target="_blank" rel="noopener" style="background:#25d366"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .2-3.3-.7-2.8-1.1-4.5-4-4.7-4.2-.1-.2-1.1-1.5-1.1-2.9s.7-2 1-2.3c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.9 2.1c.1.2.1.4 0 .5l-.3.5-.4.4c-.1.1-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.3 2.4 1.5.3.1.5.1.6-.1l.9-1.1c.2-.3.4-.2.6-.1l2 1c.3.1.5.2.5.3.1.1.1.6-.1 1.2z"/></svg>WhatsApp</a><a href="https://t.me/+78430000000" target="_blank" rel="noopener" style="background:#229ed9"><svg viewBox="0 0 24 24"><path d="M21.9 4.3 18.7 19.4c-.2 1-.9 1.3-1.7.8l-4.8-3.5-2.3 2.2c-.3.3-.5.5-1 .5l.3-4.9 8.9-8c.4-.3-.1-.5-.6-.2L6.5 13.2 1.8 11.7c-1-.3-1-1 .2-1.5L20.5 3c.9-.3 1.6.2 1.4 1.3z"/></svg>Telegram</a></div>
 <script>
 // В рабочей версии: const API='https://script.google.com/macros/s/.../exec' (Google Apps Script)
 const API=null;
@@ -262,23 +306,31 @@ function render(){
  document.getElementById('ftype').innerHTML=types.map(t=>`<option>${t}</option>`).join('')+'<option>Другое</option>';
  document.querySelectorAll('[data-t]').forEach(el=>el.onclick=()=>{cur=el.dataset.t;render();if(el.classList.contains('cat'))document.getElementById('price').scrollIntoView({behavior:'smooth'})});
 }
-// маска телефона
-const ph=document.getElementById('phone');
-ph.addEventListener('input',()=>{let d=ph.value.replace(/\D/g,'');if(d[0]=='8'||d[0]=='7')d=d.slice(1);d=d.slice(0,10);let s='+7';if(d.length)s+=' ('+d.slice(0,3);if(d.length>=3)s+=') '+d.slice(3,6);if(d.length>=6)s+='-'+d.slice(6,8);if(d.length>=8)s+='-'+d.slice(8,10);ph.value=s;ph.classList.remove('err')});
-ph.addEventListener('focus',()=>{if(!ph.value)ph.value='+7 ('});
-document.getElementById('f').addEventListener('submit',async e=>{
- e.preventDefault();const f=e.target;
+// маска телефона (корректно стирается Backspace)
+function mask(inp){let prev='';
+ inp.addEventListener('input',e=>{let d=inp.value.replace(/\D/g,'');if(d[0]=='7'||d[0]=='8')d=d.slice(1);d=d.slice(0,10);
+  if(e.inputType&&e.inputType.startsWith('delete')&&d===prev)d=d.slice(0,-1);prev=d;
+  if(!d){inp.value='';return}
+  let s='+7 ('+d.slice(0,3);if(d.length>3)s+=') '+d.slice(3,6);if(d.length>6)s+='-'+d.slice(6,8);if(d.length>8)s+='-'+d.slice(8,10);inp.value=s;
+  document.getElementById('e_phone').classList.remove('on');inp.classList.remove('err')});
+}
+const ph=document.getElementById('phone');mask(ph);
+const f=document.getElementById('f');
+const err=(id,on,el)=>{document.getElementById('e_'+id).classList.toggle('on',on);if(el)el.classList.toggle('err',on);return on};
+f.name.addEventListener('input',()=>err('name',false,f.name));
+document.getElementById('agree').addEventListener('change',e=>err('agree',!e.target.checked));
+f.addEventListener('submit',async e=>{
+ e.preventDefault();
  if(f.website.value)return;
- let bad=false;
- if(f.phone.value.replace(/\D/g,'').length!=11){f.phone.classList.add('err');bad=true}
- if(!f.name.value.trim()){f.name.classList.add('err');bad=true}
- if(!document.getElementById('agree').checked){alert('Нужно согласие на обработку данных');bad=true}
- if(bad)return;
+ const b1=err('name',!f.name.value.trim(),f.name),b2=err('phone',f.phone.value.replace(/\D/g,'').length!=11,f.phone),b3=err('agree',!document.getElementById('agree').checked);
+ if(b1||b2||b3)return;
+ const btn=document.getElementById('sbtn');btn.disabled=true;btn.textContent='Отправляем...';
  const data=Object.fromEntries(new FormData(f));
- if(API){await fetch(API,{method:'POST',body:JSON.stringify(data)})}
- document.getElementById('ok').style.display='block';f.reset();
+ try{ if(API){await fetch(API,{method:'POST',body:JSON.stringify(data)})}else{await new Promise(r=>setTimeout(r,600))}
+  document.getElementById('ok').style.display='block';f.reset();
+ }catch(x){alert('Не удалось отправить, позвоните нам: +7 (843) 000-00-00')}
+ btn.disabled=false;btn.textContent='Отправить заявку';
 });
-document.querySelectorAll('input[name=name]').forEach(i=>i.addEventListener('input',()=>i.classList.remove('err')));
 loadPrice();
 </script>
 </body>
