@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Серебро - студия дизайна интерьеров | Демо-концепт</title>
+<meta name="description" content="Дизайн интерьеров квартир, домов и коммерческих помещений. Дизайн-проект, комплектация и авторский надзор. Демо-концепт сайта.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Manrope:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#f6f4f0;--paper:#fff;--ink:#1c1c1a;--mut:#6f6d68;--line:#dedad3;--silver:#a7a8ab;--acc:#8c7b66}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:Manrope,Arial,sans-serif;background:var(--bg);color:var(--ink);font-size:16px;line-height:1.6;font-weight:400}
+img{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:1240px;margin:0 auto;padding:0 24px}
+h1,h2,h3,.serif{font-family:"Cormorant Garamond",Georgia,serif;font-weight:500;letter-spacing:.01em;line-height:1.1}
+h2{font-size:clamp(34px,4.4vw,56px)}
+.kicker{font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:var(--acc);margin-bottom:18px;display:block}
+.btn{display:inline-flex;align-items:center;gap:10px;padding:16px 30px;border:1px solid var(--ink);background:var(--ink);color:#fff;font:500 14px Manrope,sans-serif;letter-spacing:.08em;text-transform:uppercase;cursor:pointer;transition:.25s}
+.btn:hover{background:transparent;color:var(--ink)}
+.btn.ghost{background:transparent;color:#fff;border-color:rgba(255,255,255,.7)}
+.btn.ghost:hover{background:#fff;color:var(--ink)}
+/* header */
+header{position:fixed;inset:0 0 auto 0;z-index:50;transition:.3s}
+header.solid{background:rgba(246,244,240,.96);backdrop-filter:blur(8px);box-shadow:0 1px 0 var(--line)}
+.hd{display:flex;align-items:center;justify-content:space-between;height:78px}
+.logo{display:flex;align-items:center;gap:12px;color:#fff}
+header.solid .logo,header.solid nav a,header.solid .hphone{color:var(--ink)}
+.logo-mark{width:38px;height:38px;border:1px solid currentColor;border-radius:50%;display:grid;place-items:center;font:500 20px "Cormorant Garamond",serif}
+.logo b{font:500 24px "Cormorant Garamond",serif;letter-spacing:.18em;text-transform:uppercase;display:block;line-height:1}
+.logo small{font-size:10px;letter-spacing:.2em;text-transform:uppercase;opacity:.75}
+nav{display:flex;gap:34px}
+nav a{color:#fff;font-size:14px;letter-spacing:.04em;position:relative}
+nav a:after{content:"";position:absolute;left:0;bottom:-6px;width:0;height:1px;background:currentColor;transition:.25s}
+nav a:hover:after{width:100%}
+.hphone{color:#fff;font-weight:500;font-size:15px}
+.burger{display:none;background:none;border:0;width:44px;height:44px;cursor:pointer;color:#fff}
+header.solid .burger{color:var(--ink)}
+.burger span{display:block;width:24px;height:1.5px;background:currentColor;margin:6px auto;transition:.3s}
+/* hero */
+.hero{position:relative;min-height:100vh;min-height:100svh;display:flex;align-items:flex-end;color:#fff;padding:140px 0 70px;background:#2a2826}
+.hero img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.hero:before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(20,19,17,.5) 0%,rgba(20,19,17,.35) 35%,rgba(20,19,17,.78) 100%);z-index:1}
+.hero .wrap{position:relative;z-index:2;width:100%}
+.hero h1{font-size:clamp(44px,7.4vw,104px);max-width:900px;margin-bottom:26px}
+.hero h1 i{font-style:italic;color:#e7e2da}
+.hero p{max-width:520px;font-size:18px;font-weight:300;opacity:.92;margin-bottom:38px}
+.hero-row{display:flex;justify-content:space-between;align-items:flex-end;gap:40px;flex-wrap:wrap}
+.hero-stats{display:flex;gap:48px}
+.hero-stats b{font:500 44px "Cormorant Garamond",serif;display:block;line-height:1}
+.hero-stats span{font-size:13px;opacity:.8}
+.hero-cta{display:flex;gap:14px;flex-wrap:wrap}
+section{padding:120px 0}
+.head{display:flex;justify-content:space-between;align-items:flex-end;gap:30px;margin-bottom:56px;flex-wrap:wrap}
+.head p{max-width:440px;color:var(--mut)}
+/* portfolio */
+.filters{display:flex;gap:8px;flex-wrap:wrap}
+.filters button{background:none;border:1px solid var(--line);padding:10px 18px;font:500 13px Manrope,sans-serif;cursor:pointer;color:var(--ink);transition:.2s}
+.filters button.on,.filters button:hover{background:var(--ink);color:#fff;border-color:var(--ink)}
+.grid{display:grid;grid-template-columns:repeat(12,1fr);gap:20px}
+.card{position:relative;overflow:hidden;cursor:pointer;background:#ddd;grid-column:span 4;aspect-ratio:4/5}
+.card.w{grid-column:span 8;aspect-ratio:auto}
+.card img{width:100%;height:100%;object-fit:cover;transition:transform 1.2s cubic-bezier(.2,.7,.2,1)}
+.card:hover img{transform:scale(1.05)}
+.card .cap{position:absolute;left:0;right:0;bottom:0;padding:26px;color:#fff;background:linear-gradient(transparent,rgba(0,0,0,.62))}
+.card .cap h3{font-size:28px;margin-bottom:4px}
+.card .cap span{font-size:13px;opacity:.85;letter-spacing:.03em}
+.card.hide{display:none}
+/* services */
+.services{background:var(--paper)}
+.svc{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--line)}
+.svc article{padding:44px 36px 44px 0;border-bottom:1px solid var(--line);display:flex;flex-direction:column}
+.svc article+article{padding-left:36px;border-left:1px solid var(--line)}
+.svc .n{font:500 15px "Cormorant Garamond",serif;color:var(--acc);margin-bottom:26px}
+.svc h3{font-size:32px;margin-bottom:16px}
+.svc p{color:var(--mut);margin-bottom:22px}
+.svc ul{list-style:none;margin-bottom:30px;flex:1}
+.svc li{padding:8px 0;border-bottom:1px dashed var(--line);font-size:15px}
+.price{font:500 30px "Cormorant Garamond",serif}
+.price small{font:400 14px Manrope,sans-serif;color:var(--mut)}
+.note{font-size:13px;color:var(--mut);margin-top:26px}
+/* process */
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:28px;counter-reset:s}
+.step{padding-top:26px;border-top:1px solid var(--ink)}
+.step b{font:500 54px "Cormorant Garamond",serif;color:var(--silver);display:block;line-height:1;margin-bottom:18px}
+.step h3{font-size:26px;margin-bottom:10px}
+.step p{color:var(--mut);font-size:15px}
+/* about */
+.about{background:var(--ink);color:#eee}
+.about-g{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center}
+.about .kicker{color:var(--silver)}
+.about p{color:#bdbab4;margin-bottom:18px;max-width:520px}
+.about-img{aspect-ratio:4/5;overflow:hidden}
+.about-img img{width:100%;height:100%;object-fit:cover}
+.vals{display:grid;grid-template-columns:1fr 1fr;gap:26px;margin-top:40px}
+.vals div{border-top:1px solid #444;padding-top:16px}
+.vals b{font:500 22px "Cormorant Garamond",serif;color:#fff;display:block;margin-bottom:4px}
+.vals span{font-size:14px;color:#9e9b95}
+/* contacts */
+.ct-g{display:grid;grid-template-columns:1fr 1fr;gap:60px}
+.ct-list a,.ct-list div{display:flex;justify-content:space-between;gap:20px;padding:20px 0;border-bottom:1px solid var(--line);font-size:17px}
+.ct-list span{color:var(--mut);font-size:14px}
+.ct-list a:hover{color:var(--acc)}
+.msg{display:flex;gap:10px;margin-top:28px;flex-wrap:wrap}
+.msg a{border:1px solid var(--ink);padding:12px 22px;font-size:14px;font-weight:500;transition:.2s}
+.msg a:hover{background:var(--ink);color:#fff}
+form{background:var(--paper);padding:44px;display:grid;gap:18px}
+form h3{font-size:34px}
+form p{color:var(--mut);font-size:15px;margin-top:-8px}
+label{font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--mut);display:grid;gap:6px}
+input,select,textarea{font:400 16px Manrope,sans-serif;border:0;border-bottom:1px solid var(--line);padding:10px 0;background:transparent;color:var(--ink);outline:none;width:100%;border-radius:0}
+input:focus,select:focus,textarea:focus{border-color:var(--ink)}
+textarea{resize:vertical;min-height:70px}
+.agree{font-size:12px;color:var(--mut);text-transform:none;letter-spacing:0;display:flex;gap:10px;align-items:flex-start}
+.agree input{width:auto;margin-top:3px}
+.ok{display:none;padding:18px;background:#eef3ec;color:#2f5a2c;font-size:15px}
+.map{margin-top:80px;height:420px;background:#ddd;filter:grayscale(1) contrast(.95)}
+.map iframe{width:100%;height:100%;border:0}
+footer{padding:40px 0;border-top:1px solid var(--line);font-size:13px;color:var(--mut)}
+.ft{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
+/* lightbox */
+.lb{position:fixed;inset:0;background:rgba(15,15,14,.94);z-index:100;display:none;align-items:center;justify-content:center;padding:30px}
+.lb.on{display:flex}
+.lb img{max-height:82vh;max-width:100%;object-fit:contain}
+.lb .t{color:#fff;text-align:center;margin-top:16px;font:500 24px "Cormorant Garamond",serif}
+.lb button{position:absolute;background:none;border:0;color:#fff;font-size:36px;cursor:pointer;width:56px;height:56px}
+.lb .x{top:14px;right:14px}.lb .pv{left:10px;top:50%}.lb .nx{right:10px;top:50%}
+.fab{position:fixed;right:20px;bottom:20px;z-index:40;width:58px;height:58px;border-radius:50%;background:var(--ink);color:#fff;display:grid;place-items:center;box-shadow:0 8px 24px rgba(0,0,0,.2)}
+.fab svg{width:26px;height:26px}
+.reveal{opacity:0;transform:translateY(24px);transition:opacity .9s,transform .9s}
+.reveal.in{opacity:1;transform:none}
+@media(max-width:1000px){
+ nav,.hphone{display:none}
+ .burger{display:block}
+ nav.open{display:flex;position:fixed;top:78px;left:0;right:0;bottom:0;background:var(--bg);flex-direction:column;padding:40px 24px;gap:26px}
+ nav.open a{color:var(--ink);font:500 32px "Cormorant Garamond",serif}
+ .svc{grid-template-columns:1fr}
+ .svc article,.svc article+article{padding:36px 0;border-left:0}
+ .steps{grid-template-columns:1fr 1fr}
+ .about-g,.ct-g{grid-template-columns:1fr;gap:44px}
+ .card,.card.w{grid-column:span 6;aspect-ratio:4/5}
+}
+@media(max-width:620px){
+ section{padding:80px 0}
+ .wrap{padding:0 18px}
+ .hero{padding-bottom:44px}
+ .hero p{font-size:16px}
+ .hero-stats{gap:28px}.hero-stats b{font-size:34px}
+ .hero-cta .btn{flex:1;justify-content:center}
+ .grid{gap:12px}
+ .card,.card.w{grid-column:span 12;aspect-ratio:4/3.6}
+ .steps{grid-template-columns:1fr}
+ form{padding:28px 20px}
+ .vals{grid-template-columns:1fr}
+ .map{height:320px;margin-top:56px}
+ .logo small{display:none}
+ .ct-list a,.ct-list div{font-size:15px;flex-wrap:wrap}
+ .hero h1{text-shadow:0 2px 24px rgba(0,0,0,.35)}
+}
+</style>
+</head>
+<body>
+<header id="hd"><div class="wrap hd">
+ <a class="logo" href="#top"><span class="logo-mark">С</span><span><b>Серебро</b><small>студия дизайна интерьеров</small></span></a>
+ <nav id="nav"><a href="#projects">Проекты</a><a href="#services">Услуги и цены</a><a href="#process">Как работаем</a><a href="#about">О студии</a><a href="#contacts">Контакты</a></nav>
+ <a class="hphone" href="tel:+79990000000">+7 999 000-00-00</a>
+ <button class="burger" id="burger" aria-label="Открыть меню"><span></span><span></span><span></span></button>
+</div></header>
+
+<section class="hero" id="top">
+ <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=2000&q=75&auto=format&fit=crop" alt="Гостиная с деревянной стеной и панорамными окнами" fetchpriority="high">
+ <div class="wrap">
+  <span class="kicker" style="color:#e7e2da">Дизайн интерьеров квартир и домов</span>
+  <h1>Интерьеры, в которых <i>спокойно жить</i></h1>
+  <div class="hero-row">
+   <div>
+    <p>Проектируем пространство под ваш ритм жизни: от планировки до последней дверной ручки. Сопровождаем ремонт, чтобы результат совпал с визуализацией.</p>
+    <div class="hero-cta"><a class="btn" href="#contacts" style="background:#fff;color:#1c1c1a;border-color:#fff">Обсудить проект</a><a class="btn ghost" href="#projects">Смотреть работы</a></div>
+   </div>
+   <div class="hero-stats"><div><b>120+</b><span>проектов</span></div><div><b>9 лет</b><span>на рынке</span></div><div><b>14 000 м²</b><span>интерьеров</span></div></div>
+  </div>
+ </div>
+</section>
+
+<section id="projects"><div class="wrap">
+ <div class="head reveal"><div><span class="kicker">Портфолио</span><h2>Избранные проекты</h2></div>
+  <div class="filters" id="filters"><button class="on" data-f="all">Все</button><button data-f="flat">Квартиры</button><button data-f="house">Дома</button><button data-f="biz">Коммерческие</button></div></div>
+ <div class="grid" id="grid">
+  <div class="card w reveal" data-c="flat" data-t="ЖК «Береговой», 112 м²"><img loading="lazy" src="https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?w=1400&q=70&auto=format&fit=crop" alt="Светлая гостиная в бежевых тонах"><div class="cap"><h3>ЖК «Береговой»</h3><span>Квартира · 112 м² · 2025</span></div></div>
+  <div class="card reveal" data-c="flat" data-t="Спальня в ЖК «Береговой»"><img loading="lazy" src="https://images.unsplash.com/photo-1616594039964-ae9021a400a0?w=900&q=70&auto=format&fit=crop" alt="Спальня с тёмной стеной и мягким изголовьем"><div class="cap"><h3>Тёмная спальня</h3><span>Квартира · 112 м²</span></div></div>
+  <div class="card reveal" data-c="house" data-t="Дом в Истре, 240 м²"><img loading="lazy" src="https://images.unsplash.com/photo-1617806118233-18e1de247200?w=900&q=70&auto=format&fit=crop" alt="Столовая с зелёными стульями"><div class="cap"><h3>Дом в Истре</h3><span>Загородный дом · 240 м²</span></div></div>
+  <div class="card reveal" data-c="house" data-t="Ванная комната, дом в Истре"><img loading="lazy" src="https://images.unsplash.com/photo-1620626011761-996317b8d101?w=900&q=70&auto=format&fit=crop" alt="Белая ванная комната с отдельно стоящей ванной"><div class="cap"><h3>Мастер-ванная</h3><span>Загородный дом · 240 м²</span></div></div>
+  <div class="card reveal" data-c="flat" data-t="Квартира на Остоженке, 86 м²"><img loading="lazy" src="https://images.unsplash.com/photo-1631679706909-1844bbd07221?w=900&q=70&auto=format&fit=crop" alt="Гостиная с круглыми зеркалами"><div class="cap"><h3>Остоженка</h3><span>Квартира · 86 м²</span></div></div>
+  <div class="card w reveal" data-c="biz" data-t="Шоурум мебели, 310 м²"><img loading="lazy" src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?w=1400&q=70&auto=format&fit=crop" alt="Просторный зал с мебелью и высокими окнами"><div class="cap"><h3>Шоурум мебели</h3><span>Коммерческое помещение · 310 м²</span></div></div>
+  <div class="card reveal" data-c="flat" data-t="Кухня-гостиная, 64 м²"><img loading="lazy" src="https://images.unsplash.com/photo-1556912172-45b7abe8b7e1?w=900&q=70&auto=format&fit=crop" alt="Кухня с островом и деревянными акцентами"><div class="cap"><h3>Кухня-гостиная</h3><span>Квартира · 64 м²</span></div></div>
+  <div class="card reveal" data-c="biz" data-t="Офис архитектурного бюро"><img loading="lazy" src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?w=900&q=70&auto=format&fit=crop" alt="Светлый зал с кожаным диваном"><div class="cap"><h3>Лаунж-зона офиса</h3><span>Коммерческое помещение · 95 м²</span></div></div>
+  <div class="card reveal" data-c="house" data-t="Дом в Павловской Слободе"><img loading="lazy" src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=900&q=70&auto=format&fit=crop" alt="Современный загородный дом вечером"><div class="cap"><h3>Павловская Слобода</h3><span>Дом · 320 м²</span></div></div>
+  <div class="card reveal" data-c="flat" data-t="Гостиная с зелёной стеной, 78 м²"><img loading="lazy" src="https://images.unsplash.com/photo-1600494603989-9650cf6ddd3d?w=900&q=70&auto=format&fit=crop" alt="Гостиная с зелёной акцентной стеной"><div class="cap"><h3>Зелёная гостиная</h3><span>Квартира · 78 м²</span></div></div>
+ </div>
+</div></section>
+
+<section class="services" id="services"><div class="wrap">
+ <div class="head reveal"><div><span class="kicker">Услуги и цены</span><h2>Три формата работы</h2></div><p>Стоимость считаем за квадратный метр. Точную цену назовём после короткого знакомства с объектом, без скрытых доплат.</p></div>
+ <div class="svc">
+  <article class="reveal"><span class="n">01</span><h3>Планировка</h3><p>Для тех, кто делает ремонт сам, но хочет удобную и продуманную основу.</p><ul><li>Обмерный план</li><li>3 варианта планировки</li><li>План мебели и сантехники</li><li>Электрика и освещение</li></ul><div class="price">от 1 500 ₽ <small>/ м²</small></div></article>
+  <article class="reveal"><span class="n">02</span><h3>Дизайн-проект</h3><p>Полный комплект чертежей и визуализаций. По нему строители сделают ремонт без вопросов.</p><ul><li>Всё из «Планировки»</li><li>3D-визуализации всех помещений</li><li>Рабочие чертежи для бригады</li><li>Спецификация материалов</li></ul><div class="price">от 3 500 ₽ <small>/ м²</small></div></article>
+  <article class="reveal"><span class="n">03</span><h3>Под ключ</h3><p>Берём на себя всё: проект, закупку, контроль ремонта и финальную расстановку.</p><ul><li>Всё из «Дизайн-проекта»</li><li>Комплектация со скидками поставщиков</li><li>Авторский надзор на объекте</li><li>Декор и фотосъёмка результата</li></ul><div class="price">от 6 000 ₽ <small>/ м²</small></div></article>
+ </div>
+ <p class="note">Цены в демо-версии примерные, на сайте будут ваши.</p>
+</div></section>
+
+<section id="process"><div class="wrap">
+ <div class="head reveal"><div><span class="kicker">Как работаем</span><h2>Понятный путь от идеи до ключей</h2></div></div>
+ <div class="steps">
+  <div class="step reveal"><b>01</b><h3>Знакомство</h3><p>Встречаемся на объекте, обсуждаем образ жизни, бюджет и сроки. Это бесплатно.</p></div>
+  <div class="step reveal"><b>02</b><h3>Концепция</h3><p>Планировка, коллажи настроения и палитра. Утверждаем направление, прежде чем рисовать детали.</p></div>
+  <div class="step reveal"><b>03</b><h3>Проект</h3><p>Визуализации и рабочие чертежи. Каждое решение можно увидеть заранее и поправить.</p></div>
+  <div class="step reveal"><b>04</b><h3>Реализация</h3><p>Закупаем материалы, контролируем бригаду и сдаём готовый интерьер.</p></div>
+ </div>
+</div></section>
+
+<section class="about" id="about"><div class="wrap about-g">
+ <div class="about-img reveal"><img loading="lazy" src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=1000&q=70&auto=format&fit=crop" alt="Минималистичный интерьер с жёлтым креслом"></div>
+ <div class="reveal"><span class="kicker">О студии</span><h2 style="margin-bottom:28px">Тихая роскошь вместо громких трендов</h2>
+  <p>«Серебро» - небольшая студия, где над вашим проектом работает один ведущий дизайнер от первой встречи до сдачи. Без передачи из рук в руки и потерянных деталей.</p>
+  <p>Мы любим натуральные материалы, сдержанные оттенки и свет. Интерьер должен оставаться актуальным через десять лет, а не через сезон.</p>
+  <div class="vals"><div><b>Фиксированная цена</b><span>Стоимость проекта прописана в договоре</span></div><div><b>Сроки в договоре</b><span>Дизайн-проект за 6-8 недель</span></div><div><b>Один дизайнер</b><span>Ведёт проект от начала до конца</span></div><div><b>Надзор</b><span>Выезжаем на объект по графику</span></div></div>
+ </div>
+</div></section>
+
+<section id="contacts"><div class="wrap">
+ <div class="ct-g">
+  <div class="reveal"><span class="kicker">Контакты</span><h2 style="margin-bottom:34px">Расскажите о вашем пространстве</h2>
+   <div class="ct-list">
+    <a href="tel:+79990000000"><span>Телефон</span>+7 999 000-00-00</a>
+    <a href="mailto:hello@studiyadizainaserebro.ru"><span>Почта</span>hello@studiyadizainaserebro.ru</a>
+    <div><span>Адрес студии</span>Москва, ул. Примерная, 1</div>
+    <div><span>Часы работы</span>Пн-Пт, 10:00-19:00</div>
+   </div>
+   <div class="msg"><a href="https://t.me/" target="_blank" rel="noopener">Telegram</a><a href="https://wa.me/79990000000" target="_blank" rel="noopener">WhatsApp</a><a href="https://max.ru/" target="_blank" rel="noopener">MAX</a></div>
+  </div>
+  <form id="form" class="reveal" novalidate>
+   <h3>Заявка на консультацию</h3><p>Перезвоним в течение рабочего дня и ответим на вопросы.</p>
+   <label>Имя<input name="name" required autocomplete="name"></label>
+   <label>Телефон<input name="phone" type="tel" required autocomplete="tel" placeholder="+7"></label>
+   <label>Объект<select name="type"><option>Квартира</option><option>Дом</option><option>Коммерческое помещение</option></select></label>
+   <label>Площадь, м²<input name="area" inputmode="numeric"></label>
+   <label>Комментарий<textarea name="msg"></textarea></label>
+   <label class="agree"><input type="checkbox" required checked> Согласен на обработку персональных данных</label>
+   <button class="btn" type="submit">Отправить заявку</button>
+   <div class="ok" id="ok">Спасибо! Заявка принята, скоро свяжемся. (В демо-версии заявка никуда не отправляется.)</div>
+  </form>
+ </div>
+ <div class="map reveal"><iframe title="Карта проезда" loading="lazy" src="https://yandex.ru/map-widget/v1/?ll=37.617635%2C55.755814&z=14&pt=37.617635,55.755814,pm2dgl"></iframe></div>
+</div></section>
+
+<footer><div class="wrap ft"><span>© 2026 Студия дизайна интерьеров «Серебро»</span><span>Демо-концепт. Фото: Unsplash, будут заменены на ваши проекты</span></div></footer>
+
+<a class="fab" href="https://t.me/" target="_blank" rel="noopener" aria-label="Написать в Telegram"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M21.9 4.3 18.7 19.4c-.2 1-.9 1.3-1.7.8l-4.8-3.5-2.3 2.2c-.3.3-.5.5-1 .5l.3-4.9 8.9-8c.4-.3-.1-.5-.6-.2L6.5 13.2 1.8 11.7c-1-.3-1-1 .2-1.5L20.5 3c.9-.3 1.6.2 1.4 1.3Z"/></svg></a>
+
+<div class="lb" id="lb"><button class="x" aria-label="Закрыть">×</button><button class="pv" aria-label="Назад">‹</button><div><img id="lbi" alt=""><div class="t" id="lbt"></div></div><button class="nx" aria-label="Вперёд">›</button></div>
+
+<script>
+const hd=document.getElementById('hd'),nav=document.getElementById('nav'),bg=document.getElementById('burger');
+const onS=()=>hd.classList.toggle('solid',scrollY>40||nav.classList.contains('open'));addEventListener('scroll',onS);onS();
+bg.onclick=()=>{nav.classList.toggle('open');onS()};nav.querySelectorAll('a').forEach(a=>a.onclick=()=>{nav.classList.remove('open');onS()});
+document.querySelectorAll('#filters button').forEach(b=>b.onclick=()=>{document.querySelectorAll('#filters button').forEach(x=>x.classList.remove('on'));b.classList.add('on');document.querySelectorAll('.card').forEach(c=>c.classList.toggle('hide',b.dataset.f!=='all'&&c.dataset.c!==b.dataset.f))});
+const io=new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting){x.target.classList.add('in');io.unobserve(x.target)}}),{threshold:0,rootMargin:"0px 0px -40px 0px"});document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+const lb=document.getElementById('lb'),lbi=document.getElementById('lbi'),lbt=document.getElementById('lbt');let cur=0;
+const vis=()=>[...document.querySelectorAll('.card:not(.hide)')];
+const show=i=>{const v=vis();cur=(i+v.length)%v.length;const c=v[cur];lbi.src=c.querySelector('img').src.replace(/w=\d+/,'w=1800');lbi.alt=c.querySelector('img').alt;lbt.textContent=c.dataset.t;lb.classList.add('on')};
+document.querySelectorAll('.card').forEach(c=>c.onclick=()=>show(vis().indexOf(c)));
+lb.querySelector('.x').onclick=()=>lb.classList.remove('on');lb.querySelector('.pv').onclick=()=>show(cur-1);lb.querySelector('.nx').onclick=()=>show(cur+1);
+lb.onclick=e=>{if(e.target===lb)lb.classList.remove('on')};addEventListener('keydown',e=>{if(!lb.classList.contains('on'))return;if(e.key==='Escape')lb.classList.remove('on');if(e.key==='ArrowLeft')show(cur-1);if(e.key==='ArrowRight')show(cur+1)});
+document.getElementById('form').onsubmit=e=>{e.preventDefault();const f=e.target;if(!f.name.value.trim()||f.phone.value.replace(/\D/g,'').length<10){alert('Укажите имя и телефон');return}document.getElementById('ok').style.display='block';f.querySelector('button').disabled=true};
+</script>
+</body>
+</html>
