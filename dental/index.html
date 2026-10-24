@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Стоматология «Белая линия» в Новосибирске | Лечение без боли</title>
+<meta name="description" content="Стоматологическая клиника «Белая линия»: лечение, имплантация, элайнеры и чистка. Пройдите тест за 1 минуту и узнайте стоимость лечения.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--teal:#0fa3a3;--teal2:#0b8484;--dark:#0e2a3a;--soft:#eef8f8;--text:#22343f;--muted:#6a7c86;--line:#dcebec}
+*{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth}
+body{font-family:Nunito,system-ui,sans-serif;color:var(--text);line-height:1.6;background:#fff}
+a{color:inherit;text-decoration:none}img{max-width:100%;display:block}
+.wrap{max-width:1180px;margin:0 auto;padding:0 24px}
+.btn{display:inline-block;background:var(--teal);color:#fff;padding:15px 30px;border-radius:40px;font-weight:700;border:none;cursor:pointer;font-size:16px;font-family:inherit;transition:.25s}
+.btn:hover{background:var(--teal2);transform:translateY(-2px)}
+.btn.o{background:#fff;color:var(--teal);border:2px solid var(--teal)}
+header{position:sticky;top:0;background:#fffffff0;backdrop-filter:blur(8px);z-index:40;border-bottom:1px solid var(--line)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:76px;gap:20px}
+.logo{font-weight:800;font-size:22px;color:var(--dark);display:flex;align-items:center;gap:10px}
+.logo span{width:40px;height:40px;border-radius:50%;background:var(--teal);color:#fff;display:grid;place-items:center;font-size:20px}
+nav{display:flex;gap:28px;font-weight:600}nav a:hover{color:var(--teal)}
+.burger{display:none;background:none;border:none;font-size:28px;cursor:pointer}
+.hero{background:var(--soft);overflow:hidden}
+.hgrid{display:grid;grid-template-columns:1.05fr 1fr;gap:50px;align-items:center;padding:70px 0}
+.pill{display:inline-flex;gap:8px;align-items:center;background:#fff;border-radius:30px;padding:7px 16px;font-weight:700;color:var(--teal);font-size:14px;margin-bottom:22px;box-shadow:0 6px 18px #0fa3a31a}
+.hero h1{font-size:clamp(36px,5vw,58px);line-height:1.1;color:var(--dark);font-weight:800;margin-bottom:20px}
+.hero h1 em{font-style:normal;color:var(--teal)}
+.hero p{font-size:18px;color:var(--muted);max-width:500px;margin-bottom:30px}
+.hero .btns{display:flex;gap:14px;flex-wrap:wrap}
+.trust{display:flex;gap:30px;margin-top:40px;flex-wrap:wrap}
+.trust b{display:block;font-size:28px;color:var(--dark);font-weight:800}.trust span{color:var(--muted);font-size:14px}
+.himg{position:relative}
+.himg img{border-radius:30px;aspect-ratio:1/1.05;object-fit:cover;width:100%}
+.badge{position:absolute;background:#fff;border-radius:18px;padding:14px 18px;box-shadow:0 14px 36px #0e2a3a22;font-weight:700;font-size:14px;display:flex;gap:12px;align-items:center}
+.badge i{font-style:normal;width:40px;height:40px;border-radius:12px;background:var(--soft);display:grid;place-items:center;font-size:20px}
+.b1{left:-24px;bottom:50px}.b2{right:-14px;top:40px}
+section{padding:100px 0}
+.head{text-align:center;max-width:640px;margin:0 auto 50px}
+.head small{color:var(--teal);font-weight:800;letter-spacing:.12em;font-size:13px;text-transform:uppercase}
+.head h2{font-size:clamp(30px,4vw,44px);line-height:1.15;color:var(--dark);margin:8px 0 12px;font-weight:800}
+.head p{color:var(--muted)}
+.srv{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.s{background:#fff;border:1px solid var(--line);border-radius:22px;padding:28px;transition:.3s}
+.s:hover{border-color:var(--teal);box-shadow:0 18px 40px #0fa3a31c;transform:translateY(-4px)}
+.s .ic{width:56px;height:56px;border-radius:16px;background:var(--soft);display:grid;place-items:center;font-size:26px;margin-bottom:16px}
+.s h3{font-size:20px;color:var(--dark);margin-bottom:8px}.s p{color:var(--muted);font-size:15px;margin-bottom:16px}
+.s b{color:var(--teal);font-size:18px}
+.quiz{background:var(--dark);color:#fff;border-radius:30px;display:grid;grid-template-columns:1fr 1.2fr;overflow:hidden}
+.quiz .l{padding:50px;background:linear-gradient(160deg,#0fa3a3,#0b6f7f)}
+.quiz .l h2{font-size:clamp(28px,3.4vw,40px);line-height:1.15;margin-bottom:16px}
+.quiz .l p{opacity:.9;margin-bottom:24px}
+.quiz .l li{list-style:none;padding:6px 0}.quiz .l li:before{content:"✓  ";font-weight:800}
+.quiz .r{padding:50px}
+.prog{height:6px;background:#ffffff22;border-radius:6px;margin-bottom:26px}.prog div{height:100%;background:var(--teal);border-radius:6px;width:33%;transition:.3s}
+.qs{display:none}.qs.on{display:block}
+.qs h3{font-size:24px;margin-bottom:20px}
+.ans{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.ans button{background:#ffffff10;border:1.5px solid #ffffff2a;color:#fff;border-radius:14px;padding:16px;text-align:left;font-family:inherit;font-size:15px;font-weight:600;cursor:pointer;transition:.2s}
+.ans button:hover{border-color:var(--teal);background:#0fa3a333}
+.qs input{width:100%;padding:15px 16px;border-radius:12px;border:none;font-size:16px;margin-bottom:12px;font-family:inherit}
+.docs{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.d{border-radius:24px;overflow:hidden;background:var(--soft)}
+.d img{width:100%;aspect-ratio:4/4.2;object-fit:cover}
+.d div{padding:22px}.d h3{color:var(--dark);font-size:20px}.d span{color:var(--teal);font-weight:700;font-size:14px}.d p{color:var(--muted);font-size:14px;margin-top:6px}
+.why{background:var(--soft)}
+.wgrid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
+.wgrid img{border-radius:28px;aspect-ratio:4/4.4;object-fit:cover}
+.wl>div:not(.head){display:flex;gap:16px;padding:18px 0;border-bottom:1px solid var(--line)}
+.wl i{font-style:normal;min-width:46px;height:46px;border-radius:14px;background:#fff;display:grid;place-items:center;font-size:22px}
+.wl b{display:block;color:var(--dark);font-size:18px}.wl span{color:var(--muted);font-size:15px}
+.rev{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.r{border:1px solid var(--line);border-radius:22px;padding:28px}
+.r .st{color:#f5b400;letter-spacing:2px;margin-bottom:10px}.r p{margin-bottom:16px;color:#3a4b55}.r b{color:var(--dark)}
+.contact{display:grid;grid-template-columns:1fr 1fr;gap:40px;background:var(--soft);border-radius:30px;padding:50px;align-items:center}
+.contact h2{font-size:clamp(28px,3.6vw,40px);color:var(--dark);margin-bottom:20px;line-height:1.15}
+.contact .row{margin-bottom:14px}.contact small{display:block;color:var(--muted)}.contact b{font-size:18px;color:var(--dark)}
+.contact img{border-radius:24px;aspect-ratio:4/3;object-fit:cover}
+footer{padding:36px 0;color:var(--muted);font-size:14px;border-top:1px solid var(--line);margin-top:100px}
+footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:14px}
+.reveal{opacity:0;transform:translateY(26px);transition:.7s}.reveal.in{opacity:1;transform:none}
+@media(max-width:960px){
+ nav{display:none}.burger{display:block}
+ nav.open{display:flex;flex-direction:column;position:absolute;top:76px;left:0;right:0;background:#fff;padding:22px;gap:18px;border-bottom:1px solid var(--line)}
+ .hgrid,.quiz,.wgrid,.contact{grid-template-columns:1fr}.srv,.docs,.rev{grid-template-columns:1fr}
+ .quiz .l,.quiz .r,.contact{padding:30px 24px}.ans{grid-template-columns:1fr}.b1{left:10px}.b2{right:10px}section{padding:70px 0}
+ .header-btn{display:none}
+}
+</style></head>
+<body>
+<header><div class="wrap nav">
+ <a href="#" class="logo"><span>✦</span>Белая линия</a>
+ <nav id="nav"><a href="#services">Услуги</a><a href="#quiz">Расчёт</a><a href="#doctors">Врачи</a><a href="#reviews">Отзывы</a><a href="#contacts">Контакты</a></nav>
+ <a href="#quiz" class="btn header-btn" style="padding:11px 22px">Записаться</a>
+ <button class="burger" onclick="nav.classList.toggle('open')">☰</button>
+</div></header>
+
+<section class="hero" style="padding:0"><div class="wrap hgrid">
+ <div class="reveal">
+  <span class="pill">🦷 Первая консультация бесплатно</span>
+  <h1>Лечим зубы <em>без боли</em> и без лишних услуг</h1>
+  <p>Честный план лечения с ценами до начала работ. Современное оборудование и врачи с опытом от 8 лет.</p>
+  <div class="btns"><a href="#quiz" class="btn">Узнать стоимость</a><a href="#services" class="btn o">Услуги и цены</a></div>
+  <div class="trust"><div><b>14 лет</b><span>работаем</span></div><div><b>27 000+</b><span>пациентов</span></div><div><b>5 лет</b><span>гарантия на импланты</span></div></div>
+ </div>
+ <div class="himg reveal"><img src="img/hero.jpg" alt="Кабинет стоматологии"><div class="badge b1"><i>⭐</i><div>4.9 на картах<br><span style="color:#6a7c86;font-weight:600">610 отзывов</span></div></div><div class="badge b2"><i>🕒</i><div>Без очередей<br><span style="color:#6a7c86;font-weight:600">приём по времени</span></div></div></div>
+</div></section>
+
+<section id="services"><div class="wrap">
+ <div class="head reveal"><small>Услуги</small><h2>Что мы лечим</h2><p>Цены указаны «от». Точную стоимость врач назовёт после осмотра и не изменит без согласования.</p></div>
+ <div class="srv">
+  <div class="s reveal"><div class="ic">🦷</div><h3>Лечение кариеса</h3><p>Под микроскопом, с качественной анестезией. Пломба держится годами.</p><b>от 3 500 ₽</b></div>
+  <div class="s reveal"><div class="ic">✨</div><h3>Чистка и отбеливание</h3><p>Ультразвук, Air Flow и полировка. Зубы светлее на 2-3 тона за визит.</p><b>от 4 000 ₽</b></div>
+  <div class="s reveal"><div class="ic">🔩</div><h3>Имплантация</h3><p>Импланты с гарантией 5 лет. План лечения на компьютерной томографии.</p><b>от 35 000 ₽</b></div>
+  <div class="s reveal"><div class="ic">😁</div><h3>Элайнеры</h3><p>Прозрачные капы вместо брекетов. Почти незаметны в жизни и на фото.</p><b>от 120 000 ₽</b></div>
+  <div class="s reveal"><div class="ic">👑</div><h3>Коронки и виниры</h3><p>Керамика и цирконий. Подбираем цвет под ваши зубы.</p><b>от 18 000 ₽</b></div>
+  <div class="s reveal"><div class="ic">👶</div><h3>Детская стоматология</h3><p>Врач, который умеет говорить с детьми. Первый визит в игровой форме.</p><b>от 1 500 ₽</b></div>
+ </div>
+</div></section>
+
+<div class="wrap" id="quiz"><div class="quiz reveal">
+ <div class="l"><h2>Узнайте стоимость лечения за 1 минуту</h2><p>Ответьте на 2 вопроса, и администратор пришлёт примерный план и цены.</p><ul><li>Без спама и навязчивых звонков</li><li>Скидка 10% на первое лечение</li><li>Консультация врача бесплатно</li></ul></div>
+ <div class="r">
+  <div class="prog"><div id="pb"></div></div>
+  <div class="qs on" data-s="1"><h3>Что вас беспокоит?</h3><div class="ans"><button>Болит зуб</button><button>Нет зуба</button><button>Хочу ровные зубы</button><button>Хочу белые зубы</button></div></div>
+  <div class="qs" data-s="2"><h3>Когда удобно прийти?</h3><div class="ans"><button>Сегодня или завтра</button><button>На этой неделе</button><button>В ближайший месяц</button><button>Пока не знаю</button></div></div>
+  <div class="qs" data-s="3"><h3>Куда прислать расчёт?</h3><form id="qf"><input required placeholder="Ваше имя"><input required type="tel" placeholder="+7 (___) ___-__-__"><button class="btn" style="width:100%">Получить расчёт</button></form></div>
+  <div class="qs" data-s="4"><h3>Спасибо! 🎉</h3><p style="opacity:.85">Администратор свяжется с вами в течение 15 минут в рабочее время.</p></div>
+ </div>
+</div></div>
+
+<section id="doctors"><div class="wrap">
+ <div class="head reveal"><small>Врачи</small><h2>Наша команда</h2></div>
+ <div class="docs">
+  <div class="d reveal"><img src="img/talk.jpg" alt="Врач-стоматолог" loading="lazy"><div><h3>Ирина Соколова</h3><span>Терапевт · стаж 12 лет</span><p>Лечение кариеса и каналов под микроскопом.</p></div></div>
+  <div class="d reveal"><img src="img/team.jpg" alt="Хирург-имплантолог" loading="lazy"><div><h3>Андрей Ковалёв</h3><span>Хирург-имплантолог · стаж 15 лет</span><p>Более 3000 установленных имплантов.</p></div></div>
+  <div class="d reveal"><img src="img/exam.jpg" alt="Ортодонт" loading="lazy"><div><h3>Мария Ли</h3><span>Ортодонт · стаж 9 лет</span><p>Элайнеры и брекеты для детей и взрослых.</p></div></div>
+ </div>
+</div></section>
+
+<section class="why"><div class="wrap wgrid">
+ <img src="img/waiting.jpg" alt="Зона ожидания клиники" class="reveal" loading="lazy">
+ <div class="wl reveal">
+  <div class="head" style="text-align:left;margin:0 0 20px"><small>Почему мы</small><h2>Спокойно с первого визита</h2></div>
+  <div><i>💬</i><p><b>План и цена до лечения</b><span>Никаких сюрпризов в чеке</span></p></div>
+  <div><i>💉</i><p><b>Анестезия, которая работает</b><span>Для детей и тревожных пациентов есть седация</span></p></div>
+  <div><i>🔬</i><p><b>Микроскоп и 3D-снимки</b><span>Видим то, что не видно глазом</span></p></div>
+  <div><i>🛡️</i><p><b>Гарантия в договоре</b><span>До 5 лет на импланты и коронки</span></p></div>
+ </div>
+</div></section>
+
+<section id="reviews"><div class="wrap">
+ <div class="head reveal"><small>Отзывы</small><h2>Пациенты о нас</h2></div>
+ <div class="rev">
+  <div class="r reveal"><div class="st">★★★★★</div><p>Боялась стоматологов с детства. Здесь впервые ничего не почувствовала, врач всё объяснял по ходу.</p><b>Елена</b></div>
+  <div class="r reveal"><div class="st">★★★★★</div><p>Поставил имплант. Сразу назвали итоговую цену, в итоге так и заплатил, без доплат.</p><b>Сергей</b></div>
+  <div class="r reveal"><div class="st">★★★★★</div><p>Водим сюда дочку. Она сама просится к «доброму доктору», для нас это показатель.</p><b>Ольга</b></div>
+ </div>
+</div></section>
+
+<div class="wrap" id="contacts"><div class="contact reveal">
+ <div><h2>Ждём вас в клинике</h2>
+  <div class="row"><small>Адрес</small><b>Новосибирск, Красный проспект, 00</b></div>
+  <div class="row"><small>Телефон</small><b><a href="tel:+73830000000">+7 (383) 000-00-00</a></b></div>
+  <div class="row"><small>Режим работы</small><b>Пн-Сб 9:00-21:00, Вс 10:00-18:00</b></div>
+  <a href="#quiz" class="btn" style="margin-top:10px">Записаться на приём</a></div>
+ <img src="img/chair.jpg" alt="Стоматологическое кресло" loading="lazy">
+</div></div>
+
+<footer><div class="wrap"><span>© Стоматология «Белая линия»</span><span>Демо-сайт для портфолио. Клиника, врачи и отзывы условные.</span></div></footer>
+<script>
+let step=1;const show=n=>{document.querySelectorAll('.qs').forEach(q=>q.classList.toggle('on',+q.dataset.s===n));document.getElementById('pb').style.width=Math.min(100,n*33.4)+'%'};
+document.querySelectorAll('.ans button').forEach(b=>b.onclick=()=>{step++;show(step)});
+document.getElementById('qf').onsubmit=e=>{e.preventDefault();step=4;show(4)};
+document.querySelectorAll('nav a').forEach(a=>a.onclick=()=>nav.classList.remove('open'));
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.1});document.querySelectorAll('.reveal').forEach(e=>io.observe(e));
+</script>
+</body></html>
