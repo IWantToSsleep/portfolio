@@ -52,7 +52,7 @@ nav a{opacity:.9}nav a:hover{color:var(--gold)}
 .open .fox-hero{opacity:1;transform:none}.open .bar-hero{opacity:1;transform:rotate(-8deg)}
 .bar-hero .float{animation:fl 5s ease-in-out infinite}
 @keyframes fl{50%{transform:translateY(-12px) rotate(2deg)}}
-.scroll-hint{position:absolute;z-index:5;bottom:18px;left:50%;transform:translateX(-50%);font-size:12px;letter-spacing:.2em;text-transform:uppercase;opacity:.8}
+.scroll-hint{transition:opacity .3s;position:absolute;z-index:5;bottom:18px;left:50%;transform:translateX(-50%);font-size:12px;letter-spacing:.2em;text-transform:uppercase;opacity:.8}
 /* sections */
 section{position:relative;padding:110px 0}
 .wave{position:absolute;left:0;right:0;top:-1px;height:80px;width:100%}
@@ -131,7 +131,7 @@ input:focus,textarea:focus{border-color:var(--gold)}
  .q4{grid-template-columns:1fr}
  .shops{gap:12px}.shop{height:110px;font-size:16px}
  form{padding:24px 18px}
- .guide svg{width:60px}.bubble{font-size:12px;max-width:160px;margin-bottom:34px}
+ .guide{left:8px;bottom:8px}.guide svg{width:46px}.bubble{font-size:12px;max-width:150px;margin-bottom:28px;padding:8px 11px}
  .wave{height:50px}
 }
 </style>
@@ -144,9 +144,9 @@ input:focus,textarea:focus{border-color:var(--gold)}
 </div></header>
 
 <section class="hero" id="top" style="padding:0">
- <div class="layer stars" id="stars" data-k="0.1"></div>
+ <div class="layer stars" id="stars" data-k="0.35"></div>
  <div class="layer" data-k="0.25"><svg viewBox="0 0 1440 900" preserveAspectRatio="xMidYMax slice"><circle cx="1130" cy="170" r="62" fill="#fff3c4" opacity=".95"/><circle cx="1130" cy="170" r="110" fill="#fff3c4" opacity=".12"/><path d="M0 640 Q240 520 480 600 T960 560 T1440 600 V900 H0Z" fill="#6c3b9e" opacity=".75"/></svg></div>
- <div class="layer" data-k="0.4"><svg viewBox="0 0 1440 900" preserveAspectRatio="xMidYMax slice">
+ <div class="layer" data-k="0.12"><svg viewBox="0 0 1440 900" preserveAspectRatio="xMidYMax slice">
   <!-- castle -->
   <g transform="translate(646 468) scale(.62)">
    <path d="M-120 420 Q120 300 360 420Z" fill="#4b2a7d"/>
@@ -161,7 +161,7 @@ input:focus,textarea:focus{border-color:var(--gold)}
    <g fill="#e9c6ea"><rect x="20" y="158" width="20" height="14"/><rect x="60" y="158" width="20" height="14"/><rect x="100" y="158" width="20" height="14"/><rect x="140" y="158" width="20" height="14"/><rect x="180" y="158" width="20" height="14"/></g>
   </g>
  </svg></div>
- <div class="layer" data-k="0.6"><svg viewBox="0 0 1440 900" preserveAspectRatio="xMidYMax slice">
+ <div class="layer" data-k="0"><svg viewBox="0 0 1440 900" preserveAspectRatio="xMidYMax slice">
   <path d="M0 720 Q300 600 620 690 T1440 650 V900 H0Z" fill="#3c1f6e"/>
   <path d="M712 690 C700 722 600 732 612 772 S860 815 760 900 L860 900 C960 815 706 802 728 772 S746 722 728 690Z" fill="#f6c25b" opacity=".9"/>
   <path d="M720 696 C708 728 618 748 646 776 S880 820 800 900" stroke="#fff1c2" stroke-width="3" fill="none" stroke-dasharray="8 14" opacity=".8"/>
@@ -257,9 +257,9 @@ document.getElementById('flavors').innerHTML=F.map(([n,d,c,t])=>`<div class="fla
 const st=document.getElementById('stars');for(let i=0;i<70;i++){const s=document.createElement('i');s.style.left=Math.random()*100+'%';s.style.top=Math.random()*55+'%';s.style.animationDelay=Math.random()*3+'s';s.style.opacity=.4+Math.random()*.6;st.appendChild(s)}
 const hero=document.getElementById('top');requestAnimationFrame(()=>setTimeout(()=>hero.classList.add('open'),150));
 const layers=[...document.querySelectorAll('.layer')],hd=document.getElementById('hd'),nav=document.getElementById('nav'),guide=document.getElementById('guide'),bub=document.getElementById('bubble');
-const tips={collection:'Попробуй угадать мой любимый вкус!',story:'Это наша с девочкой история',quality:'Честно-честно, никакой химии',buy:'Тут можно купить сказку',partners:'Давайте дружить!',contacts:'Пиши, мы ответим'};
-function onScroll(){const y=scrollY;if(y<innerHeight*1.2)layers.forEach(l=>l.style.transform=`translateY(${y*l.dataset.k}px)`);hd.classList.toggle('solid',y>60||nav.classList.contains('open'));guide.classList.toggle('on',y>innerHeight*.6);
- let cur='collection';for(const id in tips){const el=document.getElementById(id);if(el.getBoundingClientRect().top<innerHeight*.55)cur=id}if(bub.dataset.c!==cur){bub.dataset.c=cur;bub.textContent=tips[cur]}}
+const hint=document.querySelector('.scroll-hint');let bt;const tips={collection:'Попробуй угадать мой любимый вкус!',story:'Это наша с девочкой история',quality:'Честно-честно, никакой химии',buy:'Тут можно купить сказку',partners:'Давайте дружить!',contacts:'Пиши, мы ответим'};
+function onScroll(){const y=scrollY;if(y<innerHeight*1.2)layers.forEach(l=>l.style.transform=`translateY(${y*l.dataset.k}px)`);hd.classList.toggle('solid',y>60||nav.classList.contains('open'));guide.classList.toggle('on',y>innerHeight*.6);hint.style.opacity=y>30?0:.8;
+ let cur='collection';for(const id in tips){const el=document.getElementById(id);if(el.getBoundingClientRect().top<innerHeight*.55)cur=id}if(bub.dataset.c!==cur){bub.dataset.c=cur;bub.textContent=tips[cur];bub.style.opacity=1;clearTimeout(bt);bt=setTimeout(()=>bub.style.opacity=0,3500)}}
 addEventListener('scroll',onScroll,{passive:true});onScroll();
 document.getElementById('burger').onclick=()=>{nav.classList.toggle('open');onScroll()};nav.querySelectorAll('a').forEach(a=>a.onclick=()=>{nav.classList.remove('open');onScroll()});
 const io=new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting){x.target.classList.add('in');io.unobserve(x.target)}}),{rootMargin:'0px 0px -40px 0px'});document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
