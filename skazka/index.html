@@ -41,13 +41,12 @@ nav a{opacity:.88;transition:.2s}nav a:hover{opacity:1;color:var(--gold2)}
 .hero-bg img{width:100%;height:112%;object-fit:cover;object-position:50% 32%;transform:scale(1.12);transition:transform 3.2s cubic-bezier(.2,.7,.2,1);filter:saturate(1.1)}
 .open .hero-bg img{transform:scale(1)}
 .hero:after{content:"";position:absolute;inset:0;z-index:1;background:radial-gradient(ellipse at 50% 40%,rgba(36,17,47,.0) 0%,rgba(36,17,47,.35) 60%,rgba(36,17,47,.85) 100%),linear-gradient(180deg,rgba(36,17,47,.65) 0%,rgba(80,30,90,.25) 35%,rgba(36,17,47,.2) 60%,rgba(36,17,47,.95) 100%)}
-.mist{position:absolute;z-index:2;left:-10%;right:-10%;bottom:6%;height:40%;background:url("https://images.unsplash.com/photo-1501630834273-4b5604d2ee31?w=1600&q=60&auto=format&fit=crop") center/cover;mix-blend-mode:screen;opacity:.28;-webkit-mask-image:linear-gradient(180deg,transparent,#000 40%,#000 70%,transparent);mask-image:linear-gradient(180deg,transparent,#000 40%,#000 70%,transparent);animation:drift 40s linear infinite alternate}
-@keyframes drift{to{transform:translateX(6%)}}
-.cloud{position:absolute;z-index:8;top:0;bottom:0;width:62%;background:url("https://images.unsplash.com/photo-1501630834273-4b5604d2ee31?w=1600&q=70&auto=format&fit=crop") center/cover;transition:transform 2.4s cubic-bezier(.7,0,.25,1),opacity 2.4s;pointer-events:none}
-.cloud.l{left:0;-webkit-mask-image:linear-gradient(90deg,#000 70%,transparent);mask-image:linear-gradient(90deg,#000 70%,transparent);background-position:20% center}
-.cloud.r{right:0;-webkit-mask-image:linear-gradient(270deg,#000 70%,transparent);mask-image:linear-gradient(270deg,#000 70%,transparent);background-position:80% center;transform:scaleX(-1)}
-.open .cloud.l{transform:translateX(-105%);opacity:.0}
-.open .cloud.r{transform:translateX(105%) scaleX(-1);opacity:0}
+.fog{position:absolute;z-index:2;left:0;right:0;bottom:0;height:45%;background:radial-gradient(ellipse 70% 60% at 30% 100%,rgba(230,205,240,.28),transparent 70%),radial-gradient(ellipse 60% 50% at 80% 100%,rgba(255,215,230,.22),transparent 70%);animation:fogm 14s ease-in-out infinite alternate}
+@keyframes fogm{to{transform:translateX(3%) scale(1.04)}}
+.veil{position:absolute;inset:0;z-index:8;pointer-events:none;overflow:hidden;background:radial-gradient(ellipse at 50% 45%,#fbf3fa 0%,#ecdcf0 45%,#cdb6dc 100%);transition:opacity 1.6s .5s ease}
+.veil i{position:absolute;border-radius:50%;background:radial-gradient(circle at 50% 50%,var(--c) 0%,var(--c2) 38%,transparent 68%);transform:translate(-50%,-50%);transition:transform var(--d) cubic-bezier(.55,0,.2,1) var(--dl),opacity var(--d) ease var(--dl);will-change:transform,opacity}
+.open .veil{opacity:0}
+.open .veil i{opacity:0;transform:translate(calc(-50% + var(--x)),calc(-50% + var(--y))) scale(1.5)}
 .hero-txt{position:absolute;z-index:5;left:0;right:0;top:14%;text-align:center;padding:0 20px;opacity:0;transform:translateY(24px);transition:1.2s 1.2s}
 .open .hero-txt{opacity:1;transform:none}
 .pre{font-size:12px;letter-spacing:.38em;text-transform:uppercase;font-weight:700;color:var(--gold2)}
@@ -205,7 +204,7 @@ footer h2{color:#fff}
 
 <section class="hero" id="top" style="padding:0">
  <div class="hero-bg" id="hbg"><img src="https://images.unsplash.com/photo-1534313314376-a72289b6181e?w=2000&q=75&auto=format&fit=crop" alt="Сказочный замок на холме" fetchpriority="high"></div>
- <div class="mist"></div>
+ <div class="fog"></div>
  <div class="sparks" id="sparks"></div>
  <div class="hero-txt">
   <div class="pre">Премиальный шоколад</div>
@@ -215,7 +214,7 @@ footer h2{color:#fff}
  </div>
  <div class="arch a-fox"><img src="https://images.unsplash.com/photo-1500479694472-551d1fb6258d?w=600&q=70&auto=format&fit=crop" alt="Лиса в траве"><div class="lbl">Лиса знает дорогу</div></div>
  <div class="arch a-choc"><img src="https://images.unsplash.com/photo-1623660053975-cf75a8be0908?w=600&q=70&auto=format&fit=crop" alt="Плитка молочного шоколада"><div class="lbl">Вкус из сказки</div></div>
- <div class="cloud l"></div><div class="cloud r"></div>
+ <div class="veil" id="veil"></div>
  <div class="scroll-hint">Листайте</div>
 </section>
 
@@ -282,6 +281,9 @@ footer h2{color:#fff}
 const ICO={milk:'#i-crown',dark:'#i-leaf',white:'#i-star',orange:'#i-gift'};
 const F=[["Лисья хитрость","Молочный шоколад с карамелизированным фундуком","#c2652a","Молочный","https://images.unsplash.com/photo-1614088685112-0a760b71a3c8","#i-crown"],["Тёмный лес","Горький 70% с клюквой и щепоткой соли","#3d5a45","Горький","https://images.unsplash.com/photo-1606312619070-d48b4c652a52","#i-leaf"],["Царевна-Лебедь","Белый шоколад с миндалём и ванилью","#b9577d","Белый","https://images.unsplash.com/photo-1548907040-4baa42d10919","#i-star"],["Жар-птица","Молочный с апельсином и пряностями","#b8862f","Молочный","https://images.unsplash.com/photo-1610450949065-1f2841536c88","#i-gift"]];
 document.getElementById('flavors').innerHTML=F.map(([n,d,c,t,u,i])=>`<article class="flav reveal" style="--c:${c}"><div class="ph"><img loading="lazy" src="${u}?w=700&q=70&auto=format&fit=crop" alt="Шоколад «${n}»"></div><span class="badge"><svg class="ico"><use href="${i}"/></svg></span><h3>${n}</h3><p>${d}</p><span class="tag">${t}</span></article>`).join('');
+const veil=document.getElementById('veil');const PC=[['rgba(255,255,255,.98)','rgba(255,248,252,.75)'],['rgba(250,236,246,.97)','rgba(246,226,240,.7)'],['rgba(236,222,246,.96)','rgba(228,210,240,.65)'],['rgba(255,236,226,.95)','rgba(252,228,220,.6)']];
+for(let i=0;i<22;i++){const e=document.createElement('i');const x=Math.random()*100,y=Math.random()*100,sz=45+Math.random()*55;const dx=x-50,dy=y-50,len=Math.hypot(dx,dy)||1;const c=PC[i%4];e.style.cssText=`left:${x}%;top:${y}%;width:${sz}vmax;height:${sz*.8}vmax;--c:${c[0]};--c2:${c[1]};--x:${dx/len*75}vmax;--y:${dy/len*55}vmax;--d:${2.2+Math.random()*.9}s;--dl:${Math.random()*.35}s`;veil.appendChild(e)}
+setTimeout(()=>veil.remove(),5200);
 const sp=document.getElementById('sparks');for(let i=0;i<26;i++){const s=document.createElement('i');s.style.left=Math.random()*100+'%';s.style.top=30+Math.random()*60+'%';s.style.animationDelay=Math.random()*6+'s';sp.appendChild(s)}
 const hero=document.getElementById('top');const go=()=>hero.classList.add('open');document.querySelector('#hbg img').complete?setTimeout(go,200):(document.querySelector('#hbg img').onload=()=>setTimeout(go,150),setTimeout(go,1500));
 const hbg=document.getElementById('hbg'),hd=document.getElementById('hd'),nav=document.getElementById('nav'),guide=document.getElementById('guide'),bub=document.getElementById('bubble'),hint=document.querySelector('.scroll-hint');let bt;
