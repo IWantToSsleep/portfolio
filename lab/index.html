@@ -1,0 +1,210 @@
+<!doctype html><html lang="ru"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex">
+<title>Лаборатория эффектов</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@300;500;700&family=Manrope:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="v/lenis.css">
+<style>
+:root{--bg:#0b0b0f;--ink:#f3f1ec;--mut:#9a98a3;--acc:#c8ff5a;--line:rgba(255,255,255,.1)}
+*{box-sizing:border-box;margin:0;padding:0}html{background:var(--bg)}body{color:var(--ink);font:400 17px/1.6 Manrope,sans-serif;overflow-x:hidden}
+a{color:inherit;text-decoration:none}img{display:block;max-width:100%}
+.wrap{width:min(1240px,92vw);margin:auto}
+h1,h2,h3{font-family:Unbounded,sans-serif;font-weight:500;line-height:1.05;letter-spacing:-.02em}
+.tag{font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--acc)}
+/* grain */
+body:after{content:"";position:fixed;inset:-50%;pointer-events:none;z-index:99;opacity:.06;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence baseFrequency='.9' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");animation:gr 1s steps(4) infinite}
+@keyframes gr{50%{transform:translate(3%,-2%)}}
+/* cursor */
+.cur{position:fixed;left:0;top:0;width:14px;height:14px;border-radius:50%;background:var(--acc);pointer-events:none;z-index:100;mix-blend-mode:difference;transform:translate(-50%,-50%);transition:width .3s,height .3s}
+.cur.big{width:70px;height:70px}
+@media (hover:none){.cur{display:none}}
+/* header */
+header{position:fixed;inset:0 0 auto;z-index:50;padding:22px 0;mix-blend-mode:difference}
+.hd{display:flex;justify-content:space-between;align-items:center}.logo{font:700 20px Unbounded}
+header nav{display:flex;gap:28px;font-size:14px}
+/* hero */
+.hero{position:relative;height:100svh;min-height:600px;display:flex;align-items:flex-end;padding-bottom:9vh;overflow:hidden}
+#gl{position:absolute;inset:0;width:100%;height:100%}
+.hero h1{font-size:clamp(44px,9.5vw,150px);position:relative}
+.hero h1 .ln{display:block;overflow:hidden}
+.hero p{max-width:440px;color:#d7d5de;margin:26px 0 34px;position:relative}
+.btns{display:flex;gap:14px;flex-wrap:wrap;position:relative}
+.btn{display:inline-flex;align-items:center;gap:10px;padding:18px 30px;border-radius:60px;background:var(--acc);color:#111;font-weight:700;font-size:15px;will-change:transform}
+.btn.o{background:none;color:var(--ink);box-shadow:inset 0 0 0 1px rgba(255,255,255,.35)}
+/* marquee */
+.mq{border-block:1px solid var(--line);overflow:hidden;padding:26px 0;white-space:nowrap}
+.mq div{display:inline-flex;gap:60px;animation:mq 26s linear infinite;font:300 clamp(28px,4vw,56px) Unbounded}
+.mq span:nth-child(even){color:transparent;-webkit-text-stroke:1px var(--ink)}
+@keyframes mq{to{transform:translateX(-50%)}}
+section{padding:130px 0}
+.sh{display:flex;justify-content:space-between;align-items:end;gap:30px;margin-bottom:60px;flex-wrap:wrap}
+.sh h2{font-size:clamp(34px,5vw,72px);max-width:800px}
+/* horizontal */
+.hz{padding:0;overflow:hidden}
+.hz-in{display:flex;gap:28px;padding:0 4vw;width:max-content;height:100svh;align-items:center}
+.hz .intro{width:min(440px,80vw);flex:none}
+.card{flex:none;width:min(520px,78vw);position:relative;border-radius:22px;overflow:hidden}
+.card img{width:100%;aspect-ratio:4/5;object-fit:cover;transform:scale(1.15)}
+.card b{position:absolute;left:22px;bottom:20px;font:500 22px Unbounded}
+.card i{position:absolute;right:22px;top:20px;font-style:normal;font-size:13px;background:rgba(0,0,0,.45);backdrop-filter:blur(8px);padding:6px 12px;border-radius:30px}
+/* reveal */
+.rv{display:grid;grid-template-columns:1.2fr 1fr;gap:60px;align-items:center}
+.rv .im{border-radius:24px;overflow:hidden;clip-path:inset(30% 30% 30% 30% round 24px)}
+.rv .im img{width:100%;aspect-ratio:5/4;object-fit:cover;transform:scale(1.3)}
+.rv p{color:var(--mut);margin-top:22px}
+/* bento */
+.bento{display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:220px;gap:16px}
+.bx{position:relative;border-radius:22px;background:#15151b;border:1px solid var(--line);padding:28px;overflow:hidden;transform-style:preserve-3d;transition:transform .2s}
+.bx:before{content:"";position:absolute;inset:0;background:radial-gradient(400px circle at var(--x,50%) var(--y,50%),rgba(200,255,90,.16),transparent 45%);opacity:0;transition:.3s}
+.bx:hover:before{opacity:1}
+.bx h3{font-size:22px;position:relative}.bx p{color:var(--mut);font-size:15px;margin-top:8px;position:relative}
+.bx.w2{grid-column:span 2}.bx.h2{grid-row:span 2}
+.bx.ph{padding:0}.bx.ph img{width:100%;height:100%;object-fit:cover}
+.num{font:500 clamp(48px,6vw,84px) Unbounded;color:var(--acc);position:relative}
+/* compare */
+.cmp{position:relative;border-radius:24px;overflow:hidden;aspect-ratio:16/8;user-select:none;touch-action:pan-y}
+.cmp img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.cmp .a{filter:grayscale(1) brightness(.75) contrast(1.1);clip-path:inset(0 50% 0 0)}
+.cmp .h{position:absolute;top:0;bottom:0;left:50%;width:2px;background:var(--acc);cursor:ew-resize}
+.cmp .h:after{content:"⟷";position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:54px;height:54px;border-radius:50%;background:var(--acc);color:#111;display:grid;place-items:center;font-size:20px}
+.cmp .l{position:absolute;top:18px;padding:6px 14px;border-radius:30px;background:rgba(0,0,0,.5);font-size:13px}
+/* stack */
+.stk .it{position:sticky;top:12vh;border-radius:28px;padding:50px;min-height:62vh;margin-bottom:6vh;display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center;transform-origin:top center}
+.stk .it:nth-child(1){background:#1b1b22}.stk .it:nth-child(2){background:#24331a}.stk .it:nth-child(3){background:#3a2a1c}
+.stk .it img{border-radius:18px;aspect-ratio:4/3;object-fit:cover;width:100%}
+.stk h3{font-size:clamp(28px,3.4vw,46px)}.stk p{color:#cfcdd6;margin-top:16px}
+.stk .n{font:300 15px Unbounded;color:var(--acc);margin-bottom:20px}
+/* faq */
+.faq details{border-bottom:1px solid var(--line);padding:26px 0}
+.faq summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;gap:20px;font:500 clamp(18px,2vw,24px) Unbounded}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary:after{content:"+";color:var(--acc);transition:.3s}.faq details[open] summary:after{transform:rotate(45deg)}
+.faq p{color:var(--mut);margin-top:14px;max-width:760px}
+/* cta */
+.cta{text-align:center;padding:160px 0}
+.cta h2{font-size:clamp(46px,11vw,180px);background:linear-gradient(90deg,var(--ink),var(--acc),var(--ink));background-size:200%;-webkit-background-clip:text;background-clip:text;color:transparent;animation:sh 6s linear infinite}
+@keyframes sh{to{background-position:200%}}
+footer{border-top:1px solid var(--line);padding:30px 0;color:var(--mut);font-size:14px}
+@media(max-width:820px){
+ header nav{display:none}
+ section{padding:90px 0}
+ .hz-in{height:auto;padding:90px 4vw;overflow-x:auto;width:auto;scroll-snap-type:x mandatory}.card{scroll-snap-align:center}
+ .rv{grid-template-columns:1fr;gap:30px}
+ .bento{grid-template-columns:1fr 1fr;grid-auto-rows:170px}.bx.w2{grid-column:span 2}.bx{padding:20px}
+ .cmp{aspect-ratio:4/5}
+ .stk .it{grid-template-columns:1fr;padding:28px;gap:22px;min-height:0;top:80px;box-shadow:0 -20px 40px rgba(0,0,0,.5)}
+}
+@media (prefers-reduced-motion:reduce){*{animation:none!important}}
+</style></head><body>
+<div class="cur" id="cur"></div>
+<header><div class="wrap hd"><a class="logo" href="#">NORD/</a><nav><a href="#works">Работы</a><a href="#about">Подход</a><a href="#bento">Цифры</a><a href="#faq">Вопросы</a></nav></div></header>
+
+<section class="hero"><canvas id="gl"></canvas>
+ <div class="wrap"><h1 class="split"><span class="ln">Архитектура</span><span class="ln">тишины</span></h1>
+ <p class="fade">Демо-витрина эффектов: живой WebGL-фон, анимация текста, магнитные кнопки, скролл-сцены.</p>
+ <div class="btns fade"><a class="btn mag" href="#works">Смотреть работы →</a><a class="btn o mag" href="#faq">Вопросы</a></div></div>
+</section>
+
+<div class="mq"><div><span>Интерьеры</span><span>Архитектура</span><span>Свет</span><span>Материал</span><span>Интерьеры</span><span>Архитектура</span><span>Свет</span><span>Материал</span></div></div>
+
+<section class="hz" id="works"><div class="hz-in">
+ <div class="intro"><div class="tag">Горизонтальная галерея</div><h2 style="font-size:clamp(34px,4.4vw,64px);margin-top:18px">Избранные проекты</h2><p style="color:var(--mut);margin-top:18px">На компьютере секция закрепляется и едет вбок при прокрутке. На телефоне листается пальцем.</p></div>
+ <a class="card" href="#"><img src="p1.webp" alt="Гостиная"><i>2025</i><b>Дом у залива</b></a>
+ <a class="card" href="#"><img src="p2.webp" alt="Кухня"><i>2024</i><b>Квартира Север</b></a>
+ <a class="card" href="#"><img src="p3.webp" alt="Спальня"><i>2024</i><b>Лофт Графит</b></a>
+ <a class="card" href="#"><img src="p4.webp" alt="Интерьер"><i>2023</i><b>Резиденция Мох</b></a>
+</div></section>
+
+<section id="about"><div class="wrap rv">
+ <div class="im"><img src="p5.webp" alt="Интерьер"></div>
+ <div><div class="tag">Раскрытие при скролле</div><h2 class="split2" style="font-size:clamp(32px,4vw,58px);margin-top:18px">Каждый метр продуман до мелочей</h2><p class="fade">Фото раскрывается из центра и плавно смещается: так блок «О нас» перестаёт быть скучным.</p></div>
+</div></section>
+
+<section id="bento"><div class="wrap">
+ <div class="sh"><h2>Бенто-сетка и счётчики</h2><div class="tag">наведи мышь</div></div>
+ <div class="bento">
+  <div class="bx w2"><div class="num" data-n="128">0</div><h3>проектов</h3><p>Цифры набегают при появлении</p></div>
+  <div class="bx ph h2"><img src="p6.webp" alt="Деталь"></div>
+  <div class="bx"><div class="num" data-n="12">0</div><p>лет опыта</p></div>
+  <div class="bx"><h3>Свет</h3><p>Карточки наклоняются за курсором и подсвечиваются</p></div>
+  <div class="bx w2"><h3>Материалы</h3><p>Камень, дерево, лён. Сетка сама перестраивается под телефон.</p></div>
+ </div></div></section>
+
+<section><div class="wrap">
+ <div class="sh"><h2>До и после</h2><div class="tag">потяни ползунок</div></div>
+ <div class="cmp" id="cmp"><img src="p1.webp" alt="После"><img class="a" src="p1.webp" alt="До"><span class="l" style="left:18px">До</span><span class="l" style="right:18px">После</span><div class="h"></div></div>
+</div></section>
+
+<section><div class="wrap stk">
+ <div class="sh" style="margin-bottom:40px"><h2>Карточки-стопка</h2><div class="tag">этапы работы</div></div>
+ <div class="it"><div><div class="n">01</div><h3>Знакомство и замеры</h3><p>Карточки наезжают друг на друга при прокрутке, предыдущая слегка уменьшается.</p></div><img src="p2.webp" alt=""></div>
+ <div class="it"><div><div class="n">02</div><h3>Концепция и 3D</h3><p>Хорошо подходит для блоков «Как мы работаем» и тарифов.</p></div><img src="p3.webp" alt=""></div>
+ <div class="it"><div><div class="n">03</div><h3>Реализация</h3><p>Работает и на телефоне, без тяжёлых скриптов.</p></div><img src="p4.webp" alt=""></div>
+</div></section>
+
+<section class="faq" id="faq"><div class="wrap">
+ <div class="sh"><h2>Вопросы</h2></div>
+ <details><summary>Это всё работает на телефоне?</summary><p>Да. Тяжёлые сцены упрощаются на мобильных, курсор скрывается на сенсорных экранах.</p></details>
+ <details><summary>Можно ли это перенести на Тильду или WordPress?</summary><p>Да, эффекты подключаются как отдельные блоки кода.</p></details>
+ <details><summary>Не будет ли сайт тормозить?</summary><p>Анимации идут через transform и WebGL, библиотеки весят меньше 150 КБ вместе.</p></details>
+</div></section>
+
+<section class="cta"><div class="wrap"><h2>Давайте<br>начнём</h2><div class="btns" style="justify-content:center;margin-top:40px"><a class="btn mag" href="#">Обсудить проект →</a></div></div></section>
+<footer><div class="wrap">Демо-витрина эффектов · фото Unsplash</div></footer>
+
+<script src="v/lenis.min.js"></script><script src="v/gsap.min.js"></script><script src="v/ScrollTrigger.min.js"></script><script src="v/SplitText.min.js"></script>
+<script>
+gsap.registerPlugin(ScrollTrigger,SplitText);
+const touch=matchMedia('(hover:none)').matches, mob=innerWidth<=820;
+// smooth scroll
+const lenis=new Lenis({autoRaf:false});lenis.on('scroll',ScrollTrigger.update);gsap.ticker.add(t=>lenis.raf(t*1000));gsap.ticker.lagSmoothing(0);
+document.querySelectorAll('a[href^="#"]').forEach(a=>a.addEventListener('click',e=>{const h=a.getAttribute('href');if(h.length>1){e.preventDefault();lenis.scrollTo(h,{offset:0})}}));
+// WebGL shader bg
+(()=>{const c=document.getElementById('gl'),g=c.getContext('webgl');if(!g)return;
+const vs='attribute vec2 p;void main(){gl_Position=vec4(p,0.,1.);}';
+const fs=`precision mediump float;uniform vec2 r;uniform float t;uniform vec2 m;
+float h(vec2 p){return fract(sin(dot(p,vec2(127.1,311.7)))*43758.5);}
+float n(vec2 p){vec2 i=floor(p),f=fract(p);f=f*f*(3.-2.*f);return mix(mix(h(i),h(i+vec2(1,0)),f.x),mix(h(i+vec2(0,1)),h(i+1.),f.x),f.y);}
+float fb(vec2 p){float v=0.,a=.5;for(int i=0;i<5;i++){v+=a*n(p);p*=2.;a*=.5;}return v;}
+void main(){vec2 u=gl_FragCoord.xy/r;vec2 p=u*vec2(r.x/r.y,1.)*2.;p+=m*.3;
+float q=fb(p+t*.05);float w=fb(p+q*2.+t*.08);
+vec3 c=mix(vec3(.04,.04,.06),vec3(.16,.2,.1),w);c=mix(c,vec3(.78,1.,.35),pow(w,4.)*.9);
+c*=1.-u.y*.35;gl_FragColor=vec4(c,1.);}`;
+const sh=(t,s)=>{const o=g.createShader(t);g.shaderSource(o,s);g.compileShader(o);return o};
+const pr=g.createProgram();g.attachShader(pr,sh(g.VERTEX_SHADER,vs));g.attachShader(pr,sh(g.FRAGMENT_SHADER,fs));g.linkProgram(pr);g.useProgram(pr);
+g.bindBuffer(g.ARRAY_BUFFER,g.createBuffer());g.bufferData(g.ARRAY_BUFFER,new Float32Array([-1,-1,1,-1,-1,1,1,1]),g.STATIC_DRAW);
+const l=g.getAttribLocation(pr,'p');g.enableVertexAttribArray(l);g.vertexAttribPointer(l,2,g.FLOAT,false,0,0);
+const ur=g.getUniformLocation(pr,'r'),ut=g.getUniformLocation(pr,'t'),um=g.getUniformLocation(pr,'m');let mx=0,my=0,tx=0,ty=0;
+addEventListener('pointermove',e=>{tx=e.clientX/innerWidth;ty=e.clientY/innerHeight});
+const dpr=Math.min(devicePixelRatio,mob?1:1.5);const rs=()=>{c.width=c.offsetWidth*dpr;c.height=c.offsetHeight*dpr;g.viewport(0,0,c.width,c.height)};rs();addEventListener('resize',rs);
+let vis=true;new IntersectionObserver(e=>vis=e[0].isIntersecting).observe(c);
+const f=t=>{if(vis){mx+=(tx-mx)*.04;my+=(ty-my)*.04;g.uniform2f(ur,c.width,c.height);g.uniform1f(ut,t/1000);g.uniform2f(um,mx,my);g.drawArrays(g.TRIANGLE_STRIP,0,4)}requestAnimationFrame(f)};requestAnimationFrame(f)})();
+// hero text
+document.fonts.ready.then(()=>{
+ const s=new SplitText('.split .ln',{type:'chars'});gsap.from(s.chars,{yPercent:110,duration:1.1,ease:'expo.out',stagger:.035,delay:.2});
+ gsap.from('.hero .fade',{opacity:0,y:30,duration:1,delay:.9,stagger:.15});
+ const s2=new SplitText('.split2',{type:'words'});gsap.from(s2.words,{opacity:0,y:40,stagger:.06,duration:.8,scrollTrigger:{trigger:'.split2',start:'top 80%'}});
+});
+gsap.utils.toArray('section:not(.hero) .fade').forEach(el=>gsap.from(el,{opacity:0,y:30,duration:.9,scrollTrigger:{trigger:el,start:'top 85%'}}));
+// cursor + magnetic
+if(!touch){const cu=document.getElementById('cur');const xs=gsap.quickTo(cu,'x',{duration:.25}),ys=gsap.quickTo(cu,'y',{duration:.25});
+ addEventListener('pointermove',e=>{xs(e.clientX);ys(e.clientY)});
+ document.querySelectorAll('a,.cmp,summary').forEach(a=>{a.addEventListener('pointerenter',()=>cu.classList.add('big'));a.addEventListener('pointerleave',()=>cu.classList.remove('big'))});
+ document.querySelectorAll('.mag').forEach(b=>{b.addEventListener('pointermove',e=>{const r=b.getBoundingClientRect();gsap.to(b,{x:(e.clientX-r.left-r.width/2)*.35,y:(e.clientY-r.top-r.height/2)*.35,duration:.4})});b.addEventListener('pointerleave',()=>gsap.to(b,{x:0,y:0,duration:.6,ease:'elastic.out(1,.4)'}))});
+ document.querySelectorAll('.bx').forEach(b=>{b.addEventListener('pointermove',e=>{const r=b.getBoundingClientRect(),x=e.clientX-r.left,y=e.clientY-r.top;b.style.setProperty('--x',x+'px');b.style.setProperty('--y',y+'px');b.style.transform=`perspective(800px) rotateX(${(y/r.height-.5)*-6}deg) rotateY(${(x/r.width-.5)*6}deg)`});b.addEventListener('pointerleave',()=>b.style.transform='')});
+}
+// horizontal pin (desktop)
+const mm=gsap.matchMedia();
+mm.add('(min-width:821px)',()=>{const tr=document.querySelector('.hz-in');
+ const tw=gsap.to(tr,{x:()=>-(tr.scrollWidth-innerWidth),ease:'none',scrollTrigger:{trigger:'.hz',pin:true,scrub:1,end:()=>'+='+(tr.scrollWidth-innerWidth),invalidateOnRefresh:true}});
+ gsap.utils.toArray('.card img').forEach(i=>gsap.to(i,{scale:1,ease:'none',scrollTrigger:{trigger:i,containerAnimation:tw,start:'left right',end:'right left',scrub:true}}));
+ document.querySelectorAll('.stk .it:not(:last-child)').forEach(it=>gsap.to(it,{scale:.92,opacity:.55,ease:'none',scrollTrigger:{trigger:it,start:'top 12%',end:'bottom 12%',scrub:true}}));
+});
+// reveal
+gsap.to('.rv .im',{clipPath:'inset(0% 0% 0% 0% round 24px)',ease:'power2.out',scrollTrigger:{trigger:'.rv',start:'top 85%',end:'center 55%',scrub:1}});
+gsap.to('.rv .im img',{scale:1,ease:'none',scrollTrigger:{trigger:'.rv',start:'top bottom',end:'bottom top',scrub:true}});
+// counters
+document.querySelectorAll('[data-n]').forEach(el=>{const o={v:0};gsap.to(o,{v:+el.dataset.n,duration:2,ease:'power2.out',onUpdate:()=>el.textContent=Math.round(o.v),scrollTrigger:{trigger:el,start:'top 90%'}})});
+// compare
+(()=>{const c=document.getElementById('cmp'),a=c.querySelector('.a'),h=c.querySelector('.h');let d=false;
+ const set=x=>{const r=c.getBoundingClientRect();let p=Math.max(0,Math.min(100,(x-r.left)/r.width*100));a.style.clipPath=`inset(0 ${100-p}% 0 0)`;h.style.left=p+'%'};
+ c.addEventListener('pointerdown',e=>{d=true;set(e.clientX)});addEventListener('pointermove',e=>d&&set(e.clientX));addEventListener('pointerup',()=>d=false)})();
+</script></body></html>
